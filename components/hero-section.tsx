@@ -6,7 +6,7 @@ export function HeroSection() {
   return (
     <section
       className="relative flex items-center justify-center overflow-hidden"
-      style={{ minHeight: "50vh", marginTop: "56px" }}
+      style={{ minHeight: "100vh", marginTop: "56px" }}
       aria-label="Hero"
     >
       {/* Background Video */}
