@@ -149,13 +149,8 @@ export function WaitlistSection() {
     >
       {/* Background */}
       <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/hero-bg.jpg')" }}
-        aria-hidden="true"
-      />
-      <div
         className="absolute inset-0"
-        style={{ backgroundColor: "rgba(5,5,5,0.88)" }}
+        style={{ backgroundColor: "#050505" }}
         aria-hidden="true"
       />
 
