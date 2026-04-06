@@ -5,7 +5,7 @@ import { DriftIn } from "@/components/drift-in"
 export function HeroSection() {
   return (
     <section
-      className="relative flex items-center justify-center overflow-hidden"
+      className="relative flex items-center justify-center overflow-hidden pt-14"
       style={{ minHeight: "100vh" }}
       aria-label="Hero"
     >
