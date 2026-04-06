@@ -11,6 +11,10 @@ const FAQS = [
     answer: "SimplyEpic is a curated platform for booking high-quality adventure experiences. We focus on reliability, safety, and seamless booking so you can plan with confidence.",
   },
   {
+    question: "What activities are included?",
+    answer: "We are bringing together a curated set of standout adventures across land, water, and air. Details will be revealed to early access members first.",
+  },
+  {
     question: "How are experiences selected?",
     answer: "Every experience is carefully vetted based on safety standards, operator credentials, and overall quality. We only include operators we would trust ourselves.",
   },
