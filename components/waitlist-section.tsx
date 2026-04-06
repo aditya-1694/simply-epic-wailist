@@ -1,7 +1,7 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
-import { motion, AnimatePresence, useInView } from "framer-motion"
+import { useEffect, useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 import { DriftIn } from "@/components/drift-in"
 import { Instagram } from "lucide-react"
 
@@ -48,28 +48,31 @@ const PERKS = [
 ]
 
 function SlotMachineCounter({ targetValue }: { targetValue: number }) {
-  const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: true, amount: 0.8 })
+  const [hasAnimated, setHasAnimated] = useState(false)
+
   const digits = String(targetValue).split("")
 
   return (
-    <div
-      ref={ref}
+    <motion.div
       className="inline-flex font-mono font-bold text-5xl md:text-6xl tracking-tight overflow-hidden"
       style={{ color: "#3F9FFF" }}
+      onViewportEnter={() => {
+        if (!hasAnimated) setHasAnimated(true)
+      }}
+      viewport={{ once: true, amount: 0.8 }}
     >
       {digits.map((digit, i) => (
         <motion.span
           key={i}
           className="inline-block"
           initial={{ y: 80, opacity: 0 }}
-          animate={isInView ? { y: 0, opacity: 1 } : { y: 80, opacity: 0 }}
+          animate={hasAnimated ? { y: 0, opacity: 1 } : { y: 80, opacity: 0 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: i * 0.08 }}
         >
           {digit}
         </motion.span>
       ))}
-    </div>
+    </motion.div>
   )
 }
 
@@ -87,19 +90,14 @@ export function WaitlistSection() {
   const [submitted, setSubmitted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const [apiError, setApiError] = useState("")
-  const [mounted, setMounted] = useState(false)
-  const [remaining, setRemaining] = useState<number | null>(null)
+  const [remaining, setRemaining] = useState<number>(TOTAL_SPOTS)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  // Fetch live spot count on mount — initialise after hydration to avoid mismatch
+  // Fetch live spot count on mount
   useEffect(() => {
     fetch("/api/waitlist/count")
       .then((r) => r.json())
-      .then((data) => setRemaining(data.remaining ?? TOTAL_SPOTS))
+      .then((data) => setRemaining(data.remaining || TOTAL_SPOTS))
       .catch(() => setRemaining(TOTAL_SPOTS))
   }, [])
 
@@ -283,16 +281,7 @@ export function WaitlistSection() {
                       border: "1px solid rgba(63,159,255,0.18)",
                     }}
                   >
-                    {mounted ? (
-                      <motion.span
-                        className="w-1.5 h-1.5 rounded-full flex-shrink-0"
-                        style={{ backgroundColor: "#3F9FFF" }}
-                        animate={{ opacity: [1, 0.3, 1] }}
-                        transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                      />
-                    ) : (
-                      <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "#3F9FFF" }} />
-                    )}
+                    <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 animate-pulse" style={{ backgroundColor: "#3F9FFF" }} />
                     First 200 members only
                   </span>
                 </div>
