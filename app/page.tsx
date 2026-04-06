@@ -4,6 +4,7 @@ import { VibeCards } from "@/components/vibe-cards"
 import { ExperienceLevels } from "@/components/experience-levels"
 import { TrustPillars } from "@/components/trust-pillars"
 import { WaitlistSection } from "@/components/waitlist-section"
+import { FAQ } from "@/components/faq"
 import { TrustBar } from "@/components/trust-bar"
 import { Footer } from "@/components/footer"
 
@@ -16,6 +17,7 @@ export default function Home() {
       <VibeCards />
       <ExperienceLevels />
       <WaitlistSection />
+      <FAQ />
       <TrustBar />
       <Footer />
     </main>
