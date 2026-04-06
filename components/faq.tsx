@@ -45,12 +45,9 @@ export function FAQ() {
         {/* Header */}
         <DriftIn>
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-semibold text-white text-balance mb-3">
-              Questions
+            <h2 className="text-3xl md:text-4xl font-semibold text-white text-balance">
+              FAQs
             </h2>
-            <p className="text-sm md:text-base leading-relaxed" style={{ color: "#64748B" }}>
-              Everything you need to know about SimplyEpic.
-            </p>
           </div>
         </DriftIn>
 
