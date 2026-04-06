@@ -271,6 +271,19 @@ export function WaitlistSection() {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
               >
+                {/* Urgency Banner */}
+                <div
+                  className="mb-8 px-4 py-3 rounded-sm border text-center"
+                  style={{
+                    backgroundColor: "rgba(63,159,255,0.08)",
+                    borderColor: "rgba(63,159,255,0.25)",
+                  }}
+                >
+                  <p className="text-xs font-medium" style={{ color: "#3F9FFF" }}>
+                    Only {remaining} of 200 early access spots remaining
+                  </p>
+                </div>
+
                 {/* Form Title */}
                 <div className="text-center mb-8">
                   <h2 className="text-xl md:text-2xl font-semibold text-white text-balance">
