@@ -7,11 +7,11 @@ export function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm" style={{ backgroundColor: "rgba(5,5,5,0.6)" }}>
       <nav className="flex items-center justify-between px-6 md:px-10" style={{ height: "56px" }}>
+        {/* Logo - left aligned */}
         <motion.div
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
           className="cursor-pointer"
-          style={{ transform: "translateX(-20px) translateY(4px)" }}
         >
           <Image
             src="/logo.png"
@@ -22,6 +22,7 @@ export function Navbar() {
           />
         </motion.div>
 
+        {/* CTA button - right aligned */}
         <a href="#waitlist">
           <motion.button
             whileHover={{ backgroundColor: "rgba(63,159,255,0.08)" }}
