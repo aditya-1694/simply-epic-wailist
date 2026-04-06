@@ -11,7 +11,7 @@ export function Navbar() {
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
           className="cursor-pointer"
-          style={{ transform: "translateX(-8px) translateY(2px)" }}
+          style={{ transform: "translateX(-20px) translateY(4px)" }}
         >
           <Image
             src="/logo.png"
