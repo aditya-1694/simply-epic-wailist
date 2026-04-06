@@ -30,6 +30,21 @@ const HORIZON_OPTIONS = [
   },
 ]
 
+const PERKS = [
+  {
+    title: "15% Lifetime Discount",
+    description: "Get 15% off your first activity of choice.",
+  },
+  {
+    title: "Priority Access",
+    description: "First dibs on future activities and exclusive experiences.",
+  },
+  {
+    title: "Free GoPro Footage",
+    description: "1 in 10 bookings includes complimentary action footage.",
+  },
+]
+
 function SlotMachineCounter({ targetValue }: { targetValue: number }) {
   const [displayValue, setDisplayValue] = useState(targetValue)
 
@@ -67,6 +82,7 @@ export function WaitlistSection() {
   const [submitting, setSubmitting] = useState(false)
   const [apiError, setApiError] = useState("")
   const [remaining, setRemaining] = useState<number>(TOTAL_SPOTS)
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
   // Fetch live spot count on mount
   useEffect(() => {
@@ -136,7 +152,7 @@ export function WaitlistSection() {
   const selectedOption = HORIZON_OPTIONS.find((o) => o.value === formData.horizon)
 
   const inputClass = `
-    w-full bg-transparent text-white text-sm py-3
+    w-full bg-transparent text-white text-sm py-3 px-0
     border-b border-slate-700 focus:border-[#3F9FFF] focus:outline-none
     transition-colors duration-300 placeholder:text-slate-600
   `
@@ -144,25 +160,50 @@ export function WaitlistSection() {
   return (
     <section
       id="waitlist"
-      className="relative py-12 px-6 md:px-10 flex items-center justify-center overflow-hidden"
-      style={{ minHeight: "90vh" }}
+      className="relative py-16 md:py-24 px-6 md:px-10 flex flex-col items-center justify-center overflow-hidden"
+      style={{ backgroundColor: "#050505" }}
     >
-      {/* Background */}
-      <div
-        className="absolute inset-0"
-        style={{ backgroundColor: "#050505" }}
-        aria-hidden="true"
-      />
+      {/* Perks Section */}
+      <DriftIn className="w-full max-w-6xl mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+          {PERKS.map((perk, i) => (
+            <motion.div
+              key={perk.title}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: i * 0.1 }}
+              viewport={{ once: true }}
+              className="flex flex-col gap-3"
+            >
+              <div className="flex items-center gap-3">
+                <div
+                  className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold"
+                  style={{ backgroundColor: "rgba(63,159,255,0.15)", color: "#3F9FFF", border: "1px solid rgba(63,159,255,0.3)" }}
+                >
+                  ✓
+                </div>
+                <h3 className="text-base font-semibold text-white">{perk.title}</h3>
+              </div>
+              <p className="text-sm leading-relaxed" style={{ color: "#94A3B8" }}>
+                {perk.description}
+              </p>
+            </motion.div>
+          ))}
+        </div>
 
-      <DriftIn className="relative z-10 w-full max-w-md">
-        {/* Glassmorphism card */}
+        {/* Divider */}
+        <div className="w-full h-px mb-16" style={{ backgroundColor: "rgba(63,159,255,0.12)" }} />
+      </DriftIn>
+
+      {/* Form Section */}
+      <DriftIn className="w-full max-w-xl">
         <div
           className="rounded-lg border p-8 md:p-12"
           style={{
             backdropFilter: "blur(24px)",
             WebkitBackdropFilter: "blur(24px)",
-            backgroundColor: "rgba(10,10,10,0.65)",
-            borderColor: "rgba(63,159,255,0.2)",
+            backgroundColor: "rgba(10,10,10,0.5)",
+            borderColor: "rgba(63,159,255,0.15)",
           }}
         >
           <AnimatePresence mode="wait">
@@ -194,7 +235,7 @@ export function WaitlistSection() {
                       aria-label="Full Name"
                     />
                     {errors.name && (
-                      <p className="text-xs mt-1" style={{ color: "#3F9FFF" }}>{errors.name}</p>
+                      <p className="text-xs mt-2" style={{ color: "#ff6b6b" }}>{errors.name}</p>
                     )}
                   </div>
 
@@ -209,7 +250,7 @@ export function WaitlistSection() {
                       aria-label="Email"
                     />
                     {errors.email && (
-                      <p className="text-xs mt-1" style={{ color: "#3F9FFF" }}>{errors.email}</p>
+                      <p className="text-xs mt-2" style={{ color: "#ff6b6b" }}>{errors.email}</p>
                     )}
                   </div>
 
@@ -225,7 +266,7 @@ export function WaitlistSection() {
                         aria-label="Country code"
                       />
                       {errors.countryCode && (
-                        <p className="text-xs mt-1" style={{ color: "#3F9FFF" }}>{errors.countryCode}</p>
+                        <p className="text-xs mt-2" style={{ color: "#ff6b6b" }}>{errors.countryCode}</p>
                       )}
                     </div>
                     <div className="flex-1">
@@ -238,7 +279,7 @@ export function WaitlistSection() {
                         aria-label="Phone number"
                       />
                       {errors.phone && (
-                        <p className="text-xs mt-1" style={{ color: "#3F9FFF" }}>{errors.phone}</p>
+                        <p className="text-xs mt-2" style={{ color: "#ff6b6b" }}>{errors.phone}</p>
                       )}
                     </div>
                   </div>
@@ -254,64 +295,120 @@ export function WaitlistSection() {
                       aria-label="City"
                     />
                     {errors.city && (
-                      <p className="text-xs mt-1" style={{ color: "#3F9FFF" }}>{errors.city}</p>
+                      <p className="text-xs mt-2" style={{ color: "#ff6b6b" }}>{errors.city}</p>
                     )}
                   </div>
 
-                  {/* Horizon Dropdown */}
+                  {/* Horizon Dropdown - Custom Premium Dropdown */}
                   <div>
-                    <label className="block text-xs tracking-widest uppercase mb-2" style={{ color: "#94A3B8" }}>
+                    <label className="block text-xs tracking-widest uppercase mb-3" style={{ color: "#94A3B8" }}>
                       Which horizon are you looking to conquer next?
                     </label>
                     <div className="relative">
-                      <select
-                        value={formData.horizon}
-                        onChange={(e) => setFormData({ ...formData, horizon: e.target.value })}
-                        className="w-full bg-transparent text-sm py-3 pr-8 border-b appearance-none cursor-pointer focus:outline-none transition-colors duration-300"
+                      <button
+                        type="button"
+                        onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                        className="w-full text-left flex items-center justify-between px-0 py-3 border-b transition-colors duration-300"
                         style={{
-                          color: formData.horizon ? "#ffffff" : "#475569",
-                          borderBottomColor: formData.horizon ? "#3F9FFF" : "#1e293b",
+                          borderBottomColor: isDropdownOpen ? "#3F9FFF" : "rgba(71, 85, 105, 0.5)",
+                          color: formData.horizon ? "#ffffff" : "#64748B",
                         }}
-                        aria-label="Horizon selection"
                       >
-                        <option value="" disabled>
-                          Select your horizon
-                        </option>
-                        {HORIZON_OPTIONS.map((opt) => (
-                          <option key={opt.value} value={opt.value}>
-                            {opt.label}
-                          </option>
-                        ))}
-                      </select>
-                      <span
-                        className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-xs"
-                        style={{ color: "#3F9FFF" }}
-                      >
-                        ▾
-                      </span>
+                        <span className="text-sm">
+                          {formData.horizon 
+                            ? HORIZON_OPTIONS.find(o => o.value === formData.horizon)?.label 
+                            : "Select your horizon"}
+                        </span>
+                        <motion.span
+                          animate={{ rotate: isDropdownOpen ? 180 : 0 }}
+                          transition={{ duration: 0.2 }}
+                          style={{ color: "#3F9FFF" }}
+                        >
+                          ▾
+                        </motion.span>
+                      </button>
+
+                      {/* Dropdown Menu */}
+                      <AnimatePresence>
+                        {isDropdownOpen && (
+                          <motion.div
+                            initial={{ opacity: 0, y: -8 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -8 }}
+                            transition={{ duration: 0.2 }}
+                            className="absolute top-full left-0 right-0 mt-2 z-50 border rounded-sm overflow-hidden"
+                            style={{
+                              backgroundColor: "#0a0a0a",
+                              borderColor: "rgba(63,159,255,0.3)",
+                              boxShadow: "0 0 24px rgba(63,159,255,0.1)",
+                            }}
+                          >
+                            {HORIZON_OPTIONS.map((opt) => (
+                              <motion.button
+                                key={opt.value}
+                                type="button"
+                                onClick={() => {
+                                  setFormData({ ...formData, horizon: opt.value })
+                                  setIsDropdownOpen(false)
+                                }}
+                                whileHover={{ backgroundColor: "rgba(63,159,255,0.08)" }}
+                                className="w-full text-left px-4 py-3 border-b border-slate-800 last:border-b-0 transition-colors duration-200"
+                                style={{
+                                  backgroundColor: formData.horizon === opt.value ? "rgba(63,159,255,0.12)" : "transparent",
+                                }}
+                              >
+                                <div className="flex items-start justify-between gap-2">
+                                  <div>
+                                    <p
+                                      className="text-sm font-medium"
+                                      style={{ color: formData.horizon === opt.value ? "#3F9FFF" : "#ffffff" }}
+                                    >
+                                      {opt.label}
+                                    </p>
+                                    <p className="text-xs mt-1" style={{ color: "#64748B" }}>
+                                      {opt.hint}
+                                    </p>
+                                  </div>
+                                  {formData.horizon === opt.value && (
+                                    <motion.span
+                                      initial={{ scale: 0 }}
+                                      animate={{ scale: 1 }}
+                                      className="text-xs font-bold flex-shrink-0 mt-0.5"
+                                      style={{ color: "#3F9FFF" }}
+                                    >
+                                      ✓
+                                    </motion.span>
+                                  )}
+                                </div>
+                              </motion.button>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
+
+                    {/* Selected Option Hint */}
                     <AnimatePresence>
                       {selectedOption && (
                         <motion.p
-                          key={selectedOption.value}
                           initial={{ opacity: 0, y: -4 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0 }}
                           transition={{ duration: 0.3 }}
-                          className="text-xs mt-2"
-                          style={{ color: "#94A3B8" }}
+                          className="text-xs mt-3"
+                          style={{ color: "rgba(63,159,255,0.7)" }}
                         >
                           {selectedOption.hint}
                         </motion.p>
                       )}
                     </AnimatePresence>
                     {errors.horizon && (
-                      <p className="text-xs mt-1" style={{ color: "#ff6b6b" }}>{errors.horizon}</p>
+                      <p className="text-xs mt-2" style={{ color: "#ff6b6b" }}>{errors.horizon}</p>
                     )}
                   </div>
 
                   {/* WhatsApp Toggle */}
-                  <label className="flex items-center gap-3 cursor-pointer select-none">
+                  <label className="flex items-center gap-3 cursor-pointer select-none mt-2">
                     <button
                       type="button"
                       role="switch"
@@ -320,7 +417,7 @@ export function WaitlistSection() {
                       className="relative w-10 h-5 rounded-full border transition-colors duration-300 flex-shrink-0"
                       style={{
                         backgroundColor: formData.whatsapp ? "#3F9FFF" : "transparent",
-                        borderColor: formData.whatsapp ? "#3F9FFF" : "#1e293b",
+                        borderColor: formData.whatsapp ? "#3F9FFF" : "rgba(71, 85, 105, 0.5)",
                       }}
                     >
                       <span
@@ -344,7 +441,7 @@ export function WaitlistSection() {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="w-full py-4 text-xs font-bold tracking-widest uppercase text-white rounded-sm transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
+                    className="w-full py-4 text-xs font-bold tracking-widest uppercase text-white rounded-sm transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed mt-4"
                     style={{ backgroundColor: "#3F9FFF" }}
                     onMouseEnter={(e) => {
                       if (!submitting) {
@@ -383,7 +480,7 @@ export function WaitlistSection() {
                     Welcome to the SimplyEpic Inner Circle, <span style={{ color: "#3F9FFF" }}>{formData.name.split(" ")[0]}.</span>
                   </h2>
                   <p className="text-sm leading-relaxed" style={{ color: "#94A3B8" }}>
-                    Your spot is secure. Our founding members get early-access pricing and first-preference for our inaugural journeys. The official journey begins soon.
+                    Your spot is secure. As a founding member, you'll get 15% off your first activity, priority access to future experiences, and a chance to win free GoPro footage.
                   </p>
                 </div>
 
@@ -403,10 +500,10 @@ export function WaitlistSection() {
                     className="flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white rounded-sm border transition-all duration-300"
                     style={{
                       backgroundColor: "#000000",
-                      borderColor: "#1e293b",
+                      borderColor: "rgba(63,159,255,0.3)",
                     }}
                     onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#3F9FFF" }}
-                    onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#1e293b" }}
+                    onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(63,159,255,0.3)" }}
                   >
                     <Instagram size={16} aria-hidden="true" />
                     @simplyepic.adventures
