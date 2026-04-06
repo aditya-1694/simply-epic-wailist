@@ -129,73 +129,66 @@ export function ExperienceLevels() {
 
         {/* ── Mobile: vertical timeline ── */}
         <div className="flex md:hidden flex-col">
-          {/* Beginner / Advanced labels */}
-          <div className="flex justify-between mb-6">
-            <span className="text-xs tracking-widest uppercase font-medium" style={{ color: "rgba(63,159,255,0.45)" }}>
-              Beginner
-            </span>
-            <span className="text-xs tracking-widest uppercase font-medium" style={{ color: "#3F9FFF" }}>
-              Advanced
-            </span>
-          </div>
 
-          {/* Horizontal track with dots */}
-          <div className="relative h-px w-full mb-10" style={{ backgroundColor: "rgba(255,255,255,0.07)" }}>
+          {/* Beginner label */}
+          <span className="text-xs tracking-widest uppercase font-medium mb-4" style={{ color: "rgba(63,159,255,0.45)" }}>
+            Beginner
+          </span>
+
+          <div className="relative flex flex-col">
+            {/* Vertical animated line */}
+            <div
+              className="absolute left-[5px] top-0 bottom-0 w-px"
+              style={{ backgroundColor: "rgba(255,255,255,0.07)" }}
+            />
             <motion.div
-              className="absolute left-0 top-0 h-full origin-left"
-              style={{ background: "linear-gradient(to right, rgba(63,159,255,0.25), #3F9FFF)" }}
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
+              className="absolute left-[5px] top-0 w-px origin-top"
+              style={{ background: "linear-gradient(to bottom, rgba(63,159,255,0.25), #3F9FFF)", bottom: 0 }}
+              initial={{ scaleY: 0 }}
+              whileInView={{ scaleY: 1 }}
               transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
               viewport={{ once: true }}
             />
-            {/* Dots along track positioned to match cards below */}
+
+            {/* Milestones */}
             {MILESTONES.map((m, i) => (
               <motion.div
-                key={`dot-${m.label}`}
-                className="absolute top-1/2 -translate-y-1/2"
-                style={{ 
-                  left: `${(i / (MILESTONES.length - 1)) * 100}%`,
-                  transform: `translate(-50%, -50%)`
-                }}
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                transition={{ duration: 0.3, delay: 0.3 + i * 0.12 }}
+                key={m.label}
+                className="relative flex items-start gap-5 pb-8 last:pb-0"
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.45, delay: i * 0.1, ease: "easeOut" }}
                 viewport={{ once: true }}
               >
-                <div
-                  className="w-2.5 h-2.5 rounded-full border-2"
+                {/* Dot */}
+                <motion.div
+                  className="relative z-10 flex-shrink-0 w-[11px] h-[11px] rounded-full border-2 mt-1"
                   style={{
                     backgroundColor: "#050505",
-                    borderColor: i === MILESTONES.length - 1 ? "#3F9FFF" : "rgba(63,159,255,0.4)",
-                    boxShadow: i === MILESTONES.length - 1 ? "0 0 8px rgba(63,159,255,0.5)" : "none",
+                    borderColor: i === MILESTONES.length - 1 ? "#3F9FFF" : "rgba(63,159,255,0.45)",
+                    boxShadow: i === MILESTONES.length - 1 ? "0 0 10px rgba(63,159,255,0.5)" : "none",
                   }}
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  transition={{ duration: 0.3, delay: 0.2 + i * 0.1 }}
+                  viewport={{ once: true }}
                 />
+
+                {/* Content */}
+                <div className="flex flex-col gap-1">
+                  <span className="text-sm font-semibold text-white leading-tight">{m.label}</span>
+                  <span className="text-xs font-mono tracking-wide" style={{ color: "#3F9FFF" }}>{m.duration}</span>
+                  <span className="text-xs leading-relaxed" style={{ color: "#64748B" }}>{m.description}</span>
+                </div>
               </motion.div>
             ))}
           </div>
 
-          {/* Grid of milestone cards — matches dot positions */}
-          <div className="grid grid-cols-2 gap-2">
-            {MILESTONES.map((m, i) => (
-              <motion.div
-                key={m.label}
-                className="flex flex-col gap-1.5 p-3 rounded-sm border"
-                style={{
-                  borderColor: i === MILESTONES.length - 1 ? "rgba(63,159,255,0.3)" : "rgba(255,255,255,0.06)",
-                  backgroundColor: "rgba(255,255,255,0.02)",
-                }}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
-                viewport={{ once: true }}
-              >
-                <span className="text-xs font-semibold text-white">{m.label}</span>
-                <span className="text-xs font-mono" style={{ color: "#3F9FFF" }}>{m.duration}</span>
-                <span className="text-xs leading-snug" style={{ color: "#64748B" }}>{m.description}</span>
-              </motion.div>
-            ))}
-          </div>
+          {/* Advanced label */}
+          <span className="text-xs tracking-widest uppercase font-medium mt-2 ml-8" style={{ color: "#3F9FFF" }}>
+            Advanced
+          </span>
+
         </div>
 
       </div>
