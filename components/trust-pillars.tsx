@@ -16,7 +16,7 @@ const pillars = [
   },
   {
     index: "03",
-    title: "The Curated Layer",
+    title: "Seamless from Discovery to Booking",
     description: "Forget fragmented bookings and hidden costs. Seamless experience. Zero friction.",
   },
   {
@@ -49,7 +49,7 @@ export function TrustPillars() {
               className="text-sm md:text-base leading-relaxed max-w-xs md:text-right"
               style={{ color: "#64748B" }}
             >
-              Every experience is carefully selected, fully vetted, and built to be seamless — from discovery to booking.
+              Every experience is carefully selected, fully vetted, and built to be seamless from discovery to booking.
             </p>
           </div>
         </DriftIn>
