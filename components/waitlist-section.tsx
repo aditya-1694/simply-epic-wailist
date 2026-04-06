@@ -271,10 +271,25 @@ export function WaitlistSection() {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
               >
+                {/* Urgency Pill */}
+                <div className="flex justify-center mb-8">
+                  <span
+                    className="inline-flex items-center gap-2 text-xs font-medium px-4 py-1.5 rounded-full"
+                    style={{
+                      backgroundColor: "rgba(63,159,255,0.1)",
+                      color: "#94A3B8",
+                      border: "1px solid rgba(63,159,255,0.18)",
+                    }}
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 animate-pulse" style={{ backgroundColor: "#3F9FFF" }} />
+                    First 200 members only
+                  </span>
+                </div>
+
                 {/* Form Title */}
                 <div className="text-center mb-8">
                   <h2 className="text-xl md:text-2xl font-semibold text-white text-balance">
-                    Secure your founding membership
+                    Secure your early access
                   </h2>
                   <p className="text-xs md:text-sm mt-2 leading-relaxed" style={{ color: "#64748B" }}>
                     Fill in your details and we will reach out when SimplyEpic goes live.

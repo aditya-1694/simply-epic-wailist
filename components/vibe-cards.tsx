@@ -76,19 +76,19 @@ export function VibeCards() {
                   transition={{ duration: 0.6, ease: "easeOut" }}
                 />
 
-                {/* Dark gradient overlay — lighter on mobile for better text visibility */}
+                {/* Dark overlay — desktop only on hover, mobile always at bottom for text visibility */}
                 <div
-                  className="absolute inset-0 sm:group-hover:opacity-100 transition-opacity duration-300"
+                  className="hidden sm:block absolute inset-0 group-hover:opacity-100 transition-opacity duration-300"
                   style={{
                     background: "linear-gradient(to top, rgba(5,5,5,0.95) 0%, rgba(5,5,5,0.4) 50%, transparent 100%)",
                   }}
                 />
 
-                {/* Mobile-specific always-visible gradient for text contrast */}
+                {/* Mobile: bottom gradient only for text readability */}
                 <div
                   className="sm:hidden absolute inset-0"
                   style={{
-                    background: "linear-gradient(to top, rgba(5,5,5,0.85) 0%, rgba(5,5,5,0.3) 50%, transparent 100%)",
+                    background: "linear-gradient(to top, rgba(5,5,5,0.7) 0%, rgba(5,5,5,0.2) 60%, transparent 100%)",
                   }}
                 />
 
