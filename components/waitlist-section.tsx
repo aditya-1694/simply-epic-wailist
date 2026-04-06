@@ -87,14 +87,19 @@ export function WaitlistSection() {
   const [submitted, setSubmitted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const [apiError, setApiError] = useState("")
-  const [remaining, setRemaining] = useState<number>(TOTAL_SPOTS)
+  const [mounted, setMounted] = useState(false)
+  const [remaining, setRemaining] = useState<number | null>(null)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
-  // Fetch live spot count on mount
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  // Fetch live spot count on mount — initialise after hydration to avoid mismatch
   useEffect(() => {
     fetch("/api/waitlist/count")
       .then((r) => r.json())
-      .then((data) => setRemaining(data.remaining || TOTAL_SPOTS))
+      .then((data) => setRemaining(data.remaining ?? TOTAL_SPOTS))
       .catch(() => setRemaining(TOTAL_SPOTS))
   }, [])
 
@@ -278,12 +283,16 @@ export function WaitlistSection() {
                       border: "1px solid rgba(63,159,255,0.18)",
                     }}
                   >
-                    <motion.span
-                      className="w-1.5 h-1.5 rounded-full flex-shrink-0"
-                      style={{ backgroundColor: "#3F9FFF" }}
-                      animate={{ opacity: [1, 0.3, 1] }}
-                      transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                    />
+                    {mounted ? (
+                      <motion.span
+                        className="w-1.5 h-1.5 rounded-full flex-shrink-0"
+                        style={{ backgroundColor: "#3F9FFF" }}
+                        animate={{ opacity: [1, 0.3, 1] }}
+                        transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                      />
+                    ) : (
+                      <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "#3F9FFF" }} />
+                    )}
                     First 200 members only
                   </span>
                 </div>
