@@ -271,17 +271,19 @@ export function WaitlistSection() {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                {/* Urgency Banner */}
-                <div
-                  className="mb-8 px-4 py-3 rounded-sm border text-center"
-                  style={{
-                    backgroundColor: "rgba(63,159,255,0.08)",
-                    borderColor: "rgba(63,159,255,0.25)",
-                  }}
-                >
-                  <p className="text-xs font-medium" style={{ color: "#3F9FFF" }}>
-                    Only {remaining} of 200 early access spots remaining
-                  </p>
+                {/* Urgency Pill */}
+                <div className="flex justify-center mb-8">
+                  <span
+                    className="inline-flex items-center gap-2 text-xs font-medium px-4 py-1.5 rounded-full"
+                    style={{
+                      backgroundColor: "rgba(63,159,255,0.1)",
+                      color: "#94A3B8",
+                      border: "1px solid rgba(63,159,255,0.18)",
+                    }}
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 animate-pulse" style={{ backgroundColor: "#3F9FFF" }} />
+                    First 200 members only
+                  </span>
                 </div>
 
                 {/* Form Title */}
