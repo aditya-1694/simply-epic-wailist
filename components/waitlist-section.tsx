@@ -32,16 +32,22 @@ const HORIZON_OPTIONS = [
 
 const PERKS = [
   {
+    index: "01",
     title: "15% Off Your First Activity",
-    description: "As a founding member, you get 15% off on the first activity you book with us. No strings attached.",
+    highlight: "15% off",
+    description: "Sign up now and get 15% off the first activity you book with SimplyEpic. Applied automatically at checkout.",
   },
   {
+    index: "02",
     title: "Priority Access",
+    highlight: "First in line",
     description: "You get first access to new activities, destinations, and experiences before they open to the public.",
   },
   {
-    title: "Free GoPro Footage",
-    description: "Every 1 in 10 bookings gets complimentary GoPro footage of their experience, on us.",
+    index: "03",
+    title: "Concierge Access",
+    highlight: "Hands-on support",
+    description: "Trip planning, location advice, packing lists, visa help, logistics support. We handle it so you just show up and experience.",
   },
 ]
 
@@ -171,49 +177,82 @@ export function WaitlistSection() {
       style={{ backgroundColor: "#050505" }}
     >
       {/* Perks Section */}
-      <DriftIn className="w-full max-w-6xl mb-16">
-        {/* Explicit header */}
-        <div className="text-center mb-10">
-          <p className="text-xs tracking-[0.25em] uppercase mb-3 font-medium" style={{ color: "#3F9FFF" }}>
-            What you get as a founding member
+      <div className="w-full max-w-6xl mb-20">
+        {/* Header */}
+        <motion.div
+          className="mb-12"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
+          <p className="text-xs tracking-[0.25em] uppercase mb-4 font-medium" style={{ color: "#3F9FFF" }}>
+            Founding member benefits
           </p>
-          <h2 className="text-2xl md:text-3xl font-semibold text-white text-balance">
-            Join the first 200. Keep the benefits forever.
-          </h2>
-          <p className="text-sm mt-3 max-w-lg mx-auto leading-relaxed" style={{ color: "#64748B" }}>
-            Founding members get exclusive perks that stay with them for every adventure they book on SimplyEpic.
-          </p>
-        </div>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+            <h2 className="text-3xl md:text-4xl font-semibold text-white leading-tight text-balance max-w-lg">
+              Sign up now. These perks are yours when we launch.
+            </h2>
+            <p className="text-sm leading-relaxed max-w-xs md:text-right" style={{ color: "#64748B" }}>
+              Only the first 200 members get access to these benefits. Once the spots are gone, they are gone.
+            </p>
+          </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+        {/* Divider */}
+        <div className="w-full h-px mb-10" style={{ backgroundColor: "rgba(63,159,255,0.1)" }} />
+
+        {/* Perks Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-px" style={{ backgroundColor: "rgba(63,159,255,0.08)" }}>
           {PERKS.map((perk, i) => (
             <motion.div
               key={perk.title}
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: i * 0.1 }}
-              viewport={{ once: true }}
-              className="flex flex-col gap-3"
+              transition={{ duration: 0.55, ease: "easeOut", delay: i * 0.1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              className="group flex flex-col p-8 gap-6"
+              style={{ backgroundColor: "#050505" }}
             >
-              <div className="flex items-center gap-3">
-                <div
-                  className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold"
-                  style={{ backgroundColor: "rgba(63,159,255,0.15)", color: "#3F9FFF", border: "1px solid rgba(63,159,255,0.3)" }}
+              {/* Index + highlight pill */}
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-mono tracking-widest" style={{ color: "rgba(63,159,255,0.4)" }}>
+                  {perk.index}
+                </span>
+                <span
+                  className="text-xs font-semibold tracking-wide px-3 py-1 rounded-full"
+                  style={{
+                    backgroundColor: "rgba(63,159,255,0.12)",
+                    color: "#3F9FFF",
+                    border: "1px solid rgba(63,159,255,0.25)",
+                  }}
                 >
-                  ✓
-                </div>
-                <h3 className="text-base font-semibold text-white">{perk.title}</h3>
+                  {perk.highlight}
+                </span>
               </div>
-              <p className="text-sm leading-relaxed" style={{ color: "#94A3B8" }}>
-                {perk.description}
-              </p>
+
+              {/* Accent line */}
+              <div
+                className="w-8 h-px transition-all duration-500 group-hover:w-16"
+                style={{ backgroundColor: "#3F9FFF" }}
+              />
+
+              {/* Content */}
+              <div className="flex flex-col gap-3 flex-1">
+                <h3 className="text-lg font-semibold text-white leading-snug">
+                  {perk.title}
+                </h3>
+                <p className="text-sm leading-relaxed" style={{ color: "#64748B" }}>
+                  {perk.description}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>
 
         {/* Divider */}
-        <div className="w-full h-px mb-16" style={{ backgroundColor: "rgba(63,159,255,0.12)" }} />
-      </DriftIn>
+        <div className="w-full h-px mt-16 mb-0" style={{ backgroundColor: "rgba(63,159,255,0.1)" }} />
+      </div>
 
       {/* Form Section */}
       <DriftIn className="w-full max-w-xl">
