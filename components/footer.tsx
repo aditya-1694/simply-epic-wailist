@@ -17,18 +17,30 @@ export function Footer() {
         className="object-contain"
       />
 
-      <a
-        href="https://www.instagram.com/simplyepic.adventures/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-sm border transition-all duration-300"
-        style={{ borderColor: "#3F9FFF", color: "#3F9FFF" }}
-        onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "rgba(63,159,255,0.08)" }}
-        onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent" }}
-      >
-        <Instagram size={16} aria-hidden="true" />
-        @simplyepic.adventures
-      </a>
+      <div className="flex flex-col md:flex-row items-center gap-6">
+        <a
+          href="https://www.instagram.com/simplyepic.adventures/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-sm border transition-all duration-300"
+          style={{ borderColor: "#3F9FFF", color: "#3F9FFF" }}
+          onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "rgba(63,159,255,0.08)" }}
+          onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent" }}
+        >
+          <Instagram size={16} aria-hidden="true" />
+          @simplyepic.adventures
+        </a>
+
+        <a
+          href="mailto:info@simplyepic.in"
+          className="text-sm font-medium transition-colors duration-300"
+          style={{ color: "#3F9FFF" }}
+          onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.8" }}
+          onMouseLeave={(e) => { e.currentTarget.style.opacity = "1" }}
+        >
+          info@simplyepic.in
+        </a>
+      </div>
 
       <p className="text-xs text-center md:text-right" style={{ color: "#94A3B8" }}>
         &copy; 2026 Simply Epic. All Rights Reserved.

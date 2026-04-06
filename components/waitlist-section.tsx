@@ -277,23 +277,14 @@ export function WaitlistSection() {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                {/* Urgency Ticker */}
-                <div className="text-center mb-10">
-                  <p className="text-xs tracking-[0.2em] uppercase mb-4" style={{ color: "#64748B" }}>
-                    Founding spots available
+                {/* Form Title */}
+                <div className="text-center mb-8">
+                  <h2 className="text-xl md:text-2xl font-semibold text-white text-balance">
+                    Secure your founding membership
+                  </h2>
+                  <p className="text-xs md:text-sm mt-2 leading-relaxed" style={{ color: "#64748B" }}>
+                    Fill in your details and we will reach out when SimplyEpic goes live.
                   </p>
-                  <SlotMachineCounter targetValue={remaining} />
-                  <p className="text-xs mt-3 tracking-widest uppercase" style={{ color: "#64748B" }}>
-                    spots remaining
-                  </p>
-                  <div className="mt-6 mb-2">
-                    <h2 className="text-xl md:text-2xl font-semibold text-white text-balance">
-                      Secure your founding membership
-                    </h2>
-                    <p className="text-xs md:text-sm mt-2 leading-relaxed" style={{ color: "#64748B" }}>
-                      Fill in your details and we will reach out when SimplyEpic goes live.
-                    </p>
-                  </div>
                 </div>
 
                 <form onSubmit={handleSubmit} className="flex flex-col gap-6" noValidate>
