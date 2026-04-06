@@ -32,38 +32,45 @@ const HORIZON_OPTIONS = [
 
 const PERKS = [
   {
-    title: "15% Lifetime Discount",
-    description: "Get 15% off your first activity of choice.",
+    title: "15% Off Your First Activity",
+    description: "As a founding member, you get 15% off on the first activity you book with us. No strings attached.",
   },
   {
     title: "Priority Access",
-    description: "First dibs on future activities and exclusive experiences.",
+    description: "You get first access to new activities, destinations, and experiences before they open to the public.",
   },
   {
     title: "Free GoPro Footage",
-    description: "1 in 10 bookings includes complimentary action footage.",
+    description: "Every 1 in 10 bookings gets complimentary GoPro footage of their experience, on us.",
   },
 ]
 
 function SlotMachineCounter({ targetValue }: { targetValue: number }) {
-  const [displayValue, setDisplayValue] = useState(targetValue)
+  const [hasAnimated, setHasAnimated] = useState(false)
 
-  useEffect(() => {
-    setDisplayValue(targetValue)
-  }, [targetValue])
+  const digits = String(targetValue).split("")
 
   return (
-    <div className="inline-block font-mono font-bold text-4xl md:text-5xl tracking-tight" style={{ color: "#3F9FFF" }}>
-      <motion.span
-        key={displayValue}
-        initial={{ y: -40, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="inline-block"
-      >
-        {displayValue}
-      </motion.span>
-    </div>
+    <motion.div
+      className="inline-flex font-mono font-bold text-5xl md:text-6xl tracking-tight overflow-hidden"
+      style={{ color: "#3F9FFF" }}
+      onViewportEnter={() => {
+        if (!hasAnimated) setHasAnimated(true)
+      }}
+      viewport={{ once: true, amount: 0.8 }}
+    >
+      {digits.map((digit, i) => (
+        <motion.span
+          key={i}
+          className="inline-block"
+          initial={{ y: 80, opacity: 0 }}
+          animate={hasAnimated ? { y: 0, opacity: 1 } : { y: 80, opacity: 0 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: i * 0.08 }}
+        >
+          {digit}
+        </motion.span>
+      ))}
+    </motion.div>
   )
 }
 
@@ -165,6 +172,19 @@ export function WaitlistSection() {
     >
       {/* Perks Section */}
       <DriftIn className="w-full max-w-6xl mb-16">
+        {/* Explicit header */}
+        <div className="text-center mb-10">
+          <p className="text-xs tracking-[0.25em] uppercase mb-3 font-medium" style={{ color: "#3F9FFF" }}>
+            What you get as a founding member
+          </p>
+          <h2 className="text-2xl md:text-3xl font-semibold text-white text-balance">
+            Join the first 200. Keep the benefits forever.
+          </h2>
+          <p className="text-sm mt-3 max-w-lg mx-auto leading-relaxed" style={{ color: "#64748B" }}>
+            Founding members get exclusive perks that stay with them for every adventure they book on SimplyEpic.
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
           {PERKS.map((perk, i) => (
             <motion.div
@@ -216,11 +236,22 @@ export function WaitlistSection() {
                 transition={{ duration: 0.5 }}
               >
                 {/* Urgency Ticker */}
-                <div className="text-center mb-12">
-                  <p className="text-xs tracking-widest uppercase mb-3" style={{ color: "#94A3B8" }}>
-                    Limited to the first
+                <div className="text-center mb-10">
+                  <p className="text-xs tracking-[0.2em] uppercase mb-4" style={{ color: "#64748B" }}>
+                    Founding spots available
                   </p>
-                  <SlotMachineCounter targetValue={TOTAL_SPOTS} />
+                  <SlotMachineCounter targetValue={remaining} />
+                  <p className="text-xs mt-3 tracking-widest uppercase" style={{ color: "#64748B" }}>
+                    spots remaining
+                  </p>
+                  <div className="mt-6 mb-2">
+                    <h2 className="text-xl md:text-2xl font-semibold text-white text-balance">
+                      Secure your founding membership
+                    </h2>
+                    <p className="text-xs md:text-sm mt-2 leading-relaxed" style={{ color: "#64748B" }}>
+                      Fill in your details and we will reach out when SimplyEpic goes live.
+                    </p>
+                  </div>
                 </div>
 
                 <form onSubmit={handleSubmit} className="flex flex-col gap-6" noValidate>
