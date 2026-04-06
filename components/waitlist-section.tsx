@@ -35,7 +35,7 @@ const PERKS = [
     index: "01",
     title: "15% Off Your First Activity",
     highlight: "15% off",
-    description: "Sign up now and get 15% off the first activity you book with SimplyEpic. Applied automatically at checkout.",
+    description: "Sign up now and get 15% off the first activity you book with SimplyEpic.",
   },
   {
     index: "02",
@@ -46,8 +46,8 @@ const PERKS = [
   {
     index: "03",
     title: "Concierge Access",
-    highlight: "Hands-on support",
-    description: "Trip planning, location advice, packing lists, visa help, logistics support. We handle it so you just show up and experience.",
+    highlight: "Expert advice",
+    description: "Trip planning guidance, location advice, packing tips, visa information and logistics recommendations from people who know these experiences inside out.",
   },
 ]
 
@@ -208,7 +208,7 @@ export function WaitlistSection() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.55, ease: "easeOut", delay: i * 0.1 }}
               viewport={{ once: true, amount: 0.3 }}
-              className="group flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-10 px-7 py-6 rounded-sm border transition-all duration-300 hover:border-[rgba(63,159,255,0.35)] hover:shadow-[0_0_30px_rgba(63,159,255,0.07)]"
+              className="group flex flex-col sm:flex-row sm:items-stretch gap-5 sm:gap-0 px-7 py-6 rounded-sm border transition-all duration-300 hover:border-[rgba(63,159,255,0.35)] hover:shadow-[0_0_30px_rgba(63,159,255,0.07)]"
               style={{
                 backgroundColor: "rgba(255,255,255,0.02)",
                 borderColor: "rgba(255,255,255,0.06)",
@@ -216,7 +216,7 @@ export function WaitlistSection() {
             >
               {/* Left: big highlight value */}
               <div
-                className="flex-shrink-0 w-full sm:w-44 flex flex-col gap-1 border-b sm:border-b-0 sm:border-r pb-4 sm:pb-0 sm:pr-10"
+                className="flex-shrink-0 w-full sm:w-48 flex flex-col justify-center gap-1 border-b sm:border-b-0 sm:border-r pb-4 sm:pb-0 sm:pr-10"
                 style={{ borderColor: "rgba(63,159,255,0.1)" }}
               >
                 <span
@@ -225,13 +225,13 @@ export function WaitlistSection() {
                 >
                   {perk.highlight}
                 </span>
-                <span className="text-xs font-mono tracking-widest mt-1" style={{ color: "rgba(255,255,255,0.2)" }}>
+                <span className="text-xs font-mono tracking-widest mt-2" style={{ color: "rgba(255,255,255,0.2)" }}>
                   {perk.index}
                 </span>
               </div>
 
               {/* Right: title + description */}
-              <div className="flex flex-col gap-2 flex-1">
+              <div className="flex flex-col justify-center gap-2 flex-1 sm:pl-10">
                 <h3 className="text-base font-semibold text-white leading-snug">
                   {perk.title}
                 </h3>
@@ -242,7 +242,7 @@ export function WaitlistSection() {
 
               {/* Arrow indicator */}
               <motion.div
-                className="hidden sm:block flex-shrink-0 text-sm"
+                className="hidden sm:flex flex-shrink-0 items-center text-sm pl-6"
                 style={{ color: "rgba(63,159,255,0.3)" }}
                 animate={{ x: 0 }}
                 whileHover={{ x: 4 }}
