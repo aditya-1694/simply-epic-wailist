@@ -9,12 +9,17 @@ export function HeroSection() {
       style={{ minHeight: "100vh" }}
       aria-label="Hero"
     >
-      {/* Background */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/hero-bg.jpg')" }}
+      {/* Background Video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
         aria-hidden="true"
-      />
+      >
+        <source src="/hero-video.mp4" type="video/mp4" />
+      </video>
       {/* Dark radial gradient overlay */}
       <div
         className="absolute inset-0"
