@@ -12,9 +12,9 @@ export default function Home() {
     <main style={{ backgroundColor: "#050505", color: "#ffffff" }}>
       <Navbar />
       <HeroSection />
+      <TrustPillars />
       <VibeCards />
       <ExperienceLevels />
-      <TrustPillars />
       <WaitlistSection />
       <TrustBar />
       <Footer />
