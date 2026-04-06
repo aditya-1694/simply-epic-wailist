@@ -6,18 +6,18 @@ import { motion } from "framer-motion"
 export function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm" style={{ backgroundColor: "rgba(5,5,5,0.6)" }}>
-      <nav className="flex items-center justify-between px-6 md:px-10" style={{ height: "56px" }}>
+      <nav className="flex items-center justify-between px-6 md:px-10" style={{ height: "50px" }}>
         {/* Logo - left aligned */}
         <motion.div
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className="cursor-pointer"
+          className="cursor-pointer flex items-center"
         >
           <Image
             src="/logo.png"
             alt="Simply Epic"
-            width={108}
-            height={29}
+            width={97}
+            height={26}
             className="object-contain"
           />
         </motion.div>
