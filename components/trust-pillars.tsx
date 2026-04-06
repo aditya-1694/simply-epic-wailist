@@ -28,7 +28,7 @@ const pillars = [
 
 export function TrustPillars() {
   return (
-    <section className="py-20 px-6 md:px-10" style={{ backgroundColor: "#0a0a0a" }}>
+    <section className="py-12 px-6 md:px-10" style={{ backgroundColor: "#0a0a0a" }}>
       <DriftIn>
         <h2
           className="text-center text-3xl md:text-4xl font-semibold tracking-tight mb-16 text-balance"
@@ -48,6 +48,7 @@ export function TrustPillars() {
                 style={{
                   backgroundColor: "rgba(10,10,10,0.4)",
                   borderColor: "rgba(63,159,255,0.1)",
+                  minHeight: "280px",
                 }}
               >
                 <Icon

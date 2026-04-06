@@ -6,21 +6,26 @@ export function HeroSection() {
   return (
     <section
       className="relative flex items-center justify-center overflow-hidden"
-      style={{ minHeight: "100vh" }}
+      style={{ minHeight: "100vh", marginTop: "56px" }}
       aria-label="Hero"
     >
-      {/* Background */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/hero-bg.jpg')" }}
+      {/* Background Video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
         aria-hidden="true"
-      />
+      >
+        <source src="/hero-video.mp4" type="video/mp4" />
+      </video>
       {/* Dark radial gradient overlay */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse at center, rgba(5,5,5,0.55) 0%, rgba(5,5,5,0.88) 60%, rgba(5,5,5,0.97) 100%)",
+            "radial-gradient(ellipse at center, rgba(5,5,5,0.25) 0%, rgba(5,5,5,0.45) 60%, rgba(5,5,5,0.55) 100%)",
         }}
         aria-hidden="true"
       />
@@ -44,8 +49,8 @@ export function HeroSection() {
         <DriftIn delay={0.25}>
           <p className="text-base md:text-lg leading-relaxed max-w-2xl mb-10 text-white">
             Seamless to discover. Effortless to book.{" "}
-            <span style={{ color: "white" }}>Simply</span>
-            <span style={{ color: "#3F9FFF" }}>Epic.</span>
+            <span style={{ color: "white", fontWeight: "bold" }}>Simply</span>
+            <span style={{ color: "#3F9FFF", fontWeight: "bold" }}>Epic.</span>
           </p>
         </DriftIn>
 
@@ -68,7 +73,7 @@ export function HeroSection() {
                 el.style.boxShadow = "none"
               }}
             >
-              Claim Your Founding Status
+              Secure Early Access
             </button>
           </a>
         </DriftIn>
