@@ -5,8 +5,8 @@ import { DriftIn } from "@/components/drift-in"
 export function HeroSection() {
   return (
     <section
-      className="relative flex items-center justify-center overflow-hidden pt-14"
-      style={{ minHeight: "100vh" }}
+      className="relative flex items-center justify-center overflow-hidden"
+      style={{ minHeight: "100vh", marginTop: "56px" }}
       aria-label="Hero"
     >
       {/* Background Video */}
