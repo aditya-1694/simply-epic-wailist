@@ -199,59 +199,62 @@ export function WaitlistSection() {
           </div>
         </motion.div>
 
-        {/* Divider */}
-        <div className="w-full h-px mb-10" style={{ backgroundColor: "rgba(63,159,255,0.1)" }} />
-
-        {/* Perks Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px" style={{ backgroundColor: "rgba(63,159,255,0.08)" }}>
+        {/* Perks List */}
+        <div className="flex flex-col gap-4 mt-2">
           {PERKS.map((perk, i) => (
             <motion.div
               key={perk.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -16 }}
+              whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.55, ease: "easeOut", delay: i * 0.1 }}
-              viewport={{ once: true, amount: 0.2 }}
-              className="group flex flex-col p-8 gap-6"
-              style={{ backgroundColor: "#050505" }}
+              viewport={{ once: true, amount: 0.3 }}
+              className="group flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-10 px-7 py-6 rounded-sm border transition-all duration-300 hover:border-[rgba(63,159,255,0.35)] hover:shadow-[0_0_30px_rgba(63,159,255,0.07)]"
+              style={{
+                backgroundColor: "rgba(255,255,255,0.02)",
+                borderColor: "rgba(255,255,255,0.06)",
+              }}
             >
-              {/* Index + highlight pill */}
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-mono tracking-widest" style={{ color: "rgba(63,159,255,0.4)" }}>
-                  {perk.index}
-                </span>
+              {/* Left: big highlight value */}
+              <div
+                className="flex-shrink-0 w-full sm:w-44 flex flex-col gap-1 border-b sm:border-b-0 sm:border-r pb-4 sm:pb-0 sm:pr-10"
+                style={{ borderColor: "rgba(63,159,255,0.1)" }}
+              >
                 <span
-                  className="text-xs font-semibold tracking-wide px-3 py-1 rounded-full"
-                  style={{
-                    backgroundColor: "rgba(63,159,255,0.12)",
-                    color: "#3F9FFF",
-                    border: "1px solid rgba(63,159,255,0.25)",
-                  }}
+                  className="text-2xl md:text-3xl font-bold tracking-tight leading-none"
+                  style={{ color: "#3F9FFF" }}
                 >
                   {perk.highlight}
                 </span>
+                <span className="text-xs font-mono tracking-widest mt-1" style={{ color: "rgba(255,255,255,0.2)" }}>
+                  {perk.index}
+                </span>
               </div>
 
-              {/* Accent line */}
-              <div
-                className="w-8 h-px transition-all duration-500 group-hover:w-16"
-                style={{ backgroundColor: "#3F9FFF" }}
-              />
-
-              {/* Content */}
-              <div className="flex flex-col gap-3 flex-1">
-                <h3 className="text-lg font-semibold text-white leading-snug">
+              {/* Right: title + description */}
+              <div className="flex flex-col gap-2 flex-1">
+                <h3 className="text-base font-semibold text-white leading-snug">
                   {perk.title}
                 </h3>
                 <p className="text-sm leading-relaxed" style={{ color: "#64748B" }}>
                   {perk.description}
                 </p>
               </div>
+
+              {/* Arrow indicator */}
+              <motion.div
+                className="hidden sm:block flex-shrink-0 text-sm"
+                style={{ color: "rgba(63,159,255,0.3)" }}
+                animate={{ x: 0 }}
+                whileHover={{ x: 4 }}
+              >
+                →
+              </motion.div>
             </motion.div>
           ))}
         </div>
 
         {/* Divider */}
-        <div className="w-full h-px mt-16 mb-0" style={{ backgroundColor: "rgba(63,159,255,0.1)" }} />
+        <div className="w-full h-px mt-14 mb-0" style={{ backgroundColor: "rgba(63,159,255,0.1)" }} />
       </div>
 
       {/* Form Section */}
