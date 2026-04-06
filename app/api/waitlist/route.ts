@@ -18,10 +18,11 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Invalid email address." }, { status: 400 })
     }
 
-    await sql`
-      INSERT INTO waitlist (name, email, phone, city, horizon, whatsapp)
-      VALUES (${name}, ${email}, ${phone}, ${city}, ${horizon}, ${!!whatsapp})
-    `
+    console.log("[v0] Inserting into waitlist:", { name, email, city })
+    await sql(
+      "INSERT INTO waitlist (name, email, phone, city, horizon, whatsapp) VALUES ($1, $2, $3, $4, $5, $6)",
+      [name, email, phone, city, horizon, !!whatsapp]
+    )
 
     return NextResponse.json({ success: true }, { status: 201 })
   } catch (err: unknown) {
