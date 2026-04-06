@@ -84,7 +84,7 @@ export function WaitlistSection() {
     phone: "",
     city: "",
     horizon: "",
-    whatsapp: false,
+    whatsapp: true,
   })
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [submitted, setSubmitted] = useState(false)
@@ -443,29 +443,6 @@ export function WaitlistSection() {
                       <p className="text-xs mt-2" style={{ color: "#ff6b6b" }}>{errors.horizon}</p>
                     )}
                   </div>
-
-                  {/* WhatsApp Toggle */}
-                  <label className="flex items-center gap-3 cursor-pointer select-none mt-2">
-                    <button
-                      type="button"
-                      role="switch"
-                      aria-checked={formData.whatsapp}
-                      onClick={() => setFormData({ ...formData, whatsapp: !formData.whatsapp })}
-                      className="relative w-10 h-5 rounded-full border transition-colors duration-300 flex-shrink-0"
-                      style={{
-                        backgroundColor: formData.whatsapp ? "#3F9FFF" : "transparent",
-                        borderColor: formData.whatsapp ? "#3F9FFF" : "rgba(71, 85, 105, 0.5)",
-                      }}
-                    >
-                      <span
-                        className="absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white transition-transform duration-300"
-                        style={{ transform: formData.whatsapp ? "translateX(20px)" : "translateX(0)" }}
-                      />
-                    </button>
-                    <span className="text-xs" style={{ color: "#94A3B8" }}>
-                      Send me updates on WhatsApp
-                    </span>
-                  </label>
 
                   {/* API-level error */}
                   {apiError && (
