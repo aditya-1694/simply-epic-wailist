@@ -1,10 +1,13 @@
 import { neon } from "@neondatabase/serverless"
 import { NextResponse } from "next/server"
 
-const sql = neon(process.env.DATABASE_URL!)
-
 export async function POST(request: Request) {
   try {
+    if (!process.env.DATABASE_URL) {
+      return NextResponse.json({ error: "Database not configured." }, { status: 500 })
+    }
+
+    const sql = neon(process.env.DATABASE_URL)
     const { name, email, phone, city, horizon, whatsapp } = await request.json()
 
     // Basic server-side validation
