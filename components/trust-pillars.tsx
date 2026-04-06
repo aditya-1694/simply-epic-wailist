@@ -48,6 +48,7 @@ export function TrustPillars() {
                 style={{
                   backgroundColor: "rgba(10,10,10,0.4)",
                   borderColor: "rgba(63,159,255,0.1)",
+                  minHeight: "280px",
                 }}
               >
                 <Icon
