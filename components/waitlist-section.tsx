@@ -354,7 +354,7 @@ export function WaitlistSection() {
                                 whileHover={{ backgroundColor: "rgba(63,159,255,0.08)" }}
                                 className="w-full text-left px-4 py-3 border-b border-slate-800 last:border-b-0 transition-colors duration-200"
                                 style={{
-                                  backgroundColor: formData.horizon === opt.value ? "rgba(63,159,255,0.12)" : "transparent",
+                                  backgroundColor: formData.horizon === opt.value ? "rgba(63,159,255,0.12)" : "rgba(63,159,255,0)",
                                 }}
                               >
                                 <div className="flex items-start justify-between gap-2">
