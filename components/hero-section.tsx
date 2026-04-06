@@ -42,12 +42,10 @@ export function HeroSection() {
         </DriftIn>
 
         <DriftIn delay={0.25}>
-          <p className="text-base md:text-lg leading-relaxed max-w-2xl mb-10" style={{ color: "#94A3B8" }}>
-            The world&apos;s most profound experiences, thoughtfully curated.{" "}
-            <strong className="text-white">
-              Seamless to discover. Effortless to book.{" "}
-              <span style={{ color: "#3F9FFF" }}>SimplyEpic.</span>
-            </strong>
+          <p className="text-base md:text-lg leading-relaxed max-w-2xl mb-10 text-white">
+            Seamless to discover. Effortless to book.{" "}
+            <span style={{ color: "white" }}>Simply</span>
+            <span style={{ color: "#3F9FFF" }}>Epic.</span>
           </p>
         </DriftIn>
 
