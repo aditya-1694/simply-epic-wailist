@@ -144,7 +144,7 @@ export function WaitlistSection() {
   return (
     <section
       id="waitlist"
-      className="relative py-20 px-6 md:px-10 flex items-center justify-center overflow-hidden"
+      className="relative py-12 px-6 md:px-10 flex items-center justify-center overflow-hidden"
       style={{ minHeight: "90vh" }}
     >
       {/* Background */}
