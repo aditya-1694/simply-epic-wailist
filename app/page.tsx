@@ -1,0 +1,19 @@
+import { Navbar } from "@/components/navbar"
+import { HeroSection } from "@/components/hero-section"
+import { VibeCards } from "@/components/vibe-cards"
+import { TrustPillars } from "@/components/trust-pillars"
+import { WaitlistSection } from "@/components/waitlist-section"
+import { Footer } from "@/components/footer"
+
+export default function Home() {
+  return (
+    <main style={{ backgroundColor: "#050505", color: "#ffffff" }}>
+      <Navbar />
+      <HeroSection />
+      <VibeCards />
+      <TrustPillars />
+      <WaitlistSection />
+      <Footer />
+    </main>
+  )
+}
