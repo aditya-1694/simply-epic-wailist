@@ -20,7 +20,7 @@ export function HeroSection() {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse at center, rgba(5,5,5,0.55) 0%, rgba(5,5,5,0.88) 60%, rgba(5,5,5,0.97) 100%)",
+            "radial-gradient(ellipse at center, rgba(5,5,5,0.25) 0%, rgba(5,5,5,0.45) 60%, rgba(5,5,5,0.55) 100%)",
         }}
         aria-hidden="true"
       />
