@@ -158,8 +158,6 @@ export function WaitlistSection() {
     }
   }
 
-  const selectedOption = HORIZON_OPTIONS.find((o) => o.value === formData.horizon)
-
   const inputClass = `
     w-full bg-transparent text-white text-sm py-3 px-0
     border-b border-slate-700 focus:border-[#3F9FFF] focus:outline-none
