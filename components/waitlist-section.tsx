@@ -274,7 +274,7 @@ export function WaitlistSection() {
                 {/* Form Title */}
                 <div className="text-center mb-8">
                   <h2 className="text-xl md:text-2xl font-semibold text-white text-balance">
-                    Secure your founding membership
+                    Secure your early access
                   </h2>
                   <p className="text-xs md:text-sm mt-2 leading-relaxed" style={{ color: "#64748B" }}>
                     Fill in your details and we will reach out when SimplyEpic goes live.
