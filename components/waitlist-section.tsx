@@ -11,22 +11,18 @@ const HORIZON_OPTIONS = [
   {
     value: "the-deep-blue",
     label: "The Deep Blue",
-    hint: "Scuba & diving experiences",
   },
   {
     value: "the-high-altitude",
     label: "The High Altitude",
-    hint: "Skiing & snowboarding adventures",
   },
   {
     value: "the-surface",
     label: "The Surface",
-    hint: "Surfing & kiteboarding",
   },
   {
     value: "the-void",
     label: "The Void",
-    hint: "Paragliding & skydiving",
   },
 ]
 
@@ -421,23 +417,18 @@ export function WaitlistSection() {
                                   backgroundColor: formData.horizon === opt.value ? "rgba(63,159,255,0.12)" : "rgba(63,159,255,0)",
                                 }}
                               >
-                                <div className="flex items-start justify-between gap-2">
-                                  <div>
-                                    <p
-                                      className="text-sm font-medium"
-                                      style={{ color: formData.horizon === opt.value ? "#3F9FFF" : "#ffffff" }}
-                                    >
-                                      {opt.label}
-                                    </p>
-                                    <p className="text-xs mt-1" style={{ color: "#64748B" }}>
-                                      {opt.hint}
-                                    </p>
-                                  </div>
+                                <div className="flex items-center justify-between gap-2">
+                                  <p
+                                    className="text-sm font-medium"
+                                    style={{ color: formData.horizon === opt.value ? "#3F9FFF" : "#ffffff" }}
+                                  >
+                                    {opt.label}
+                                  </p>
                                   {formData.horizon === opt.value && (
                                     <motion.span
                                       initial={{ scale: 0 }}
                                       animate={{ scale: 1 }}
-                                      className="text-xs font-bold flex-shrink-0 mt-0.5"
+                                      className="text-xs font-bold flex-shrink-0"
                                       style={{ color: "#3F9FFF" }}
                                     >
                                       ✓
@@ -450,22 +441,6 @@ export function WaitlistSection() {
                         )}
                       </AnimatePresence>
                     </div>
-
-                    {/* Selected Option Hint */}
-                    <AnimatePresence>
-                      {selectedOption && (
-                        <motion.p
-                          initial={{ opacity: 0, y: -4 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0 }}
-                          transition={{ duration: 0.3 }}
-                          className="text-xs mt-3"
-                          style={{ color: "rgba(63,159,255,0.7)" }}
-                        >
-                          {selectedOption.hint}
-                        </motion.p>
-                      )}
-                    </AnimatePresence>
                     {errors.horizon && (
                       <p className="text-xs mt-2" style={{ color: "#ff6b6b" }}>{errors.horizon}</p>
                     )}
