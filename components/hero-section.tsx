@@ -18,7 +18,7 @@ export function HeroSection() {
         className="absolute inset-0 w-full h-full object-cover"
         aria-hidden="true"
       >
-        <source src="https://videos.pexels.com/video-files/18679821/18679821-sd-24-43.96-hd-24-47.22-4k-25-89.79.mp4" type="video/mp4" />
+        <source src="/her0-video.mp4" type="video/mp4" />
       </video>
       {/* Dark radial gradient overlay */}
       <div
