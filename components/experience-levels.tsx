@@ -19,11 +19,6 @@ const MILESTONES = [
     duration: "2 to 5 days",
     description: "Immersive journeys for the dedicated.",
   },
-  {
-    label: "Master it",
-    duration: "Expeditions",
-    description: "Certifications and advanced challenges.",
-  },
 ]
 
 export function ExperienceLevels() {
