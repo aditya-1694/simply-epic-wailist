@@ -22,7 +22,7 @@ const pillars = [
   {
     index: "04",
     title: "Decades of Experience, Distilled",
-    description: "Trusted by adventure seekers worldwide, so nothing is left to chance.",
+    description: "Backed by 30+ years in the travel industry, so nothing is left to chance.",
   },
 ]
 
