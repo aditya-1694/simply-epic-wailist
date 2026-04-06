@@ -16,8 +16,8 @@ export function Navbar() {
           <Image
             src="/logo.png"
             alt="Simply Epic"
-            width={120}
-            height={32}
+            width={108}
+            height={29}
             className="object-contain"
           />
         </motion.div>

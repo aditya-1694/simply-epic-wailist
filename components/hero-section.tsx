@@ -44,8 +44,8 @@ export function HeroSection() {
         <DriftIn delay={0.25}>
           <p className="text-base md:text-lg leading-relaxed max-w-2xl mb-10 text-white">
             Seamless to discover. Effortless to book.{" "}
-            <span style={{ color: "white" }}>Simply</span>
-            <span style={{ color: "#3F9FFF" }}>Epic.</span>
+            <span style={{ color: "white", fontWeight: "bold" }}>Simply</span>
+            <span style={{ color: "#3F9FFF", fontWeight: "bold" }}>Epic.</span>
           </p>
         </DriftIn>
 
@@ -68,7 +68,7 @@ export function HeroSection() {
                 el.style.boxShadow = "none"
               }}
             >
-              Claim Your Founding Status
+              Secure Early Access
             </button>
           </a>
         </DriftIn>
