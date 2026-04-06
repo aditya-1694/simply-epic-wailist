@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/hero-section"
 import { VibeCards } from "@/components/vibe-cards"
 import { TrustPillars } from "@/components/trust-pillars"
 import { WaitlistSection } from "@/components/waitlist-section"
+import { TrustBar } from "@/components/trust-bar"
 import { Footer } from "@/components/footer"
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <VibeCards />
       <TrustPillars />
       <WaitlistSection />
+      <TrustBar />
       <Footer />
     </main>
   )
