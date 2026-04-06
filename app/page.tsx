@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/navbar"
 import { HeroSection } from "@/components/hero-section"
 import { VibeCards } from "@/components/vibe-cards"
+import { ExperienceLevels } from "@/components/experience-levels"
 import { TrustPillars } from "@/components/trust-pillars"
 import { WaitlistSection } from "@/components/waitlist-section"
 import { TrustBar } from "@/components/trust-bar"
@@ -12,6 +13,7 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <VibeCards />
+      <ExperienceLevels />
       <TrustPillars />
       <WaitlistSection />
       <TrustBar />
