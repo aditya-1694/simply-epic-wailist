@@ -39,7 +39,7 @@ export function VibeCards() {
     <section className="py-12 px-6 md:px-10" style={{ backgroundColor: "#050505" }}>
       <DriftIn>
         <p className="text-center text-xs md:text-sm tracking-widest uppercase mb-8 md:mb-12" style={{ color: "#94A3B8" }}>
-          Multiple worlds. One seamless way to experience them. Masterfully guided, even for the first-timer.
+          Multiple worlds. One seamless way to experience them.
         </p>
       </DriftIn>
 

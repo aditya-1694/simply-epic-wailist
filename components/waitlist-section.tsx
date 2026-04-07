@@ -229,7 +229,7 @@ export function WaitlistSection() {
                 <h3 className="text-base font-semibold text-white leading-snug">
                   {perk.title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: "#64748B" }}>
+                <p className="text-sm leading-relaxed" style={{ color: "#CBD5E1" }}>
                   {perk.description}
                 </p>
               </div>
