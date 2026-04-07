@@ -97,7 +97,7 @@ export function SuccessPageClient({ memberName }: { memberName: string | null })
       </motion.div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center text-center max-w-3xl w-full">
+      <div className="relative z-10 flex flex-col items-center text-center max-w-3xl w-full pt-20 md:pt-0">
 
         {/* Badge */}
         <motion.div
