@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { useRouter } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import { DriftIn } from "@/components/drift-in"
 import { Instagram } from "lucide-react"
@@ -77,6 +78,7 @@ function SlotMachineCounter({ targetValue }: { targetValue: number }) {
 }
 
 export function WaitlistSection() {
+  const router = useRouter()
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -144,13 +146,9 @@ export function WaitlistSection() {
         return
       }
 
-      // Decrement counter and show success
-      setRemaining((prev) => Math.max(0, prev - 1))
-      
-      // Wait 1 second before showing success
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      
-      setSubmitted(true)
+      // Redirect to the success page with the unique member UUID
+      const memberUuid = data.memberUuid ?? "member"
+      router.push(`/join-success?id=${memberUuid}`)
     } catch {
       setApiError("Network error. Please check your connection and try again.")
     } finally {
@@ -187,7 +185,7 @@ export function WaitlistSection() {
             <h2 className="text-3xl md:text-4xl font-semibold text-white leading-tight text-balance max-w-lg">
               Sign up now. These perks are yours when we launch.
             </h2>
-            <p className="text-sm leading-relaxed max-w-xs md:text-right" style={{ color: "#64748B" }}>
+            <p className="text-sm leading-relaxed max-w-xs md:text-right" style={{ color: "#CBD5E1" }}>
               Only the first 200 members get access to these benefits. Once the spots are gone, they are gone.
             </p>
           </div>
@@ -229,7 +227,7 @@ export function WaitlistSection() {
                 <h3 className="text-base font-semibold text-white leading-snug">
                   {perk.title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: "#64748B" }}>
+                <p className="text-sm leading-relaxed" style={{ color: "#CBD5E1" }}>
                   {perk.description}
                 </p>
               </div>

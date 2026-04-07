@@ -41,7 +41,7 @@ export function ExperienceLevels() {
               <h2 className="text-3xl md:text-4xl font-semibold text-white leading-tight text-balance max-w-md">
                 Your first time or your hundredth. We have an experience for you.
               </h2>
-              <p className="text-sm leading-relaxed max-w-xs md:text-right" style={{ color: "#64748B" }}>
+              <p className="text-sm leading-relaxed max-w-xs md:text-right" style={{ color: "#CBD5E1" }}>
                 From a single afternoon to a full expedition. Every experience is guided, safe, and unforgettable.
               </p>
             </div>
@@ -117,7 +117,7 @@ export function ExperienceLevels() {
                     <span className="text-xs font-mono tracking-wide" style={{ color: "#3F9FFF" }}>
                       {m.duration}
                     </span>
-                    <span className="text-xs leading-snug" style={{ color: "#64748B", maxWidth: "120px" }}>
+                    <span className="text-xs leading-snug" style={{ color: "#CBD5E1", maxWidth: "120px" }}>
                       {m.description}
                     </span>
                   </div>
@@ -178,7 +178,7 @@ export function ExperienceLevels() {
                 <div className="flex flex-col gap-1">
                   <span className="text-sm font-semibold text-white leading-tight">{m.label}</span>
                   <span className="text-xs font-mono tracking-wide" style={{ color: "#3F9FFF" }}>{m.duration}</span>
-                  <span className="text-xs leading-relaxed" style={{ color: "#64748B" }}>{m.description}</span>
+                  <span className="text-xs leading-relaxed" style={{ color: "#CBD5E1" }}>{m.description}</span>
                 </div>
               </motion.div>
             ))}

@@ -47,7 +47,7 @@ export function TrustPillars() {
             </div>
             <p
               className="text-sm md:text-base leading-relaxed max-w-xs md:text-right"
-              style={{ color: "#64748B" }}
+              style={{ color: "#CBD5E1" }}
             >
               Every experience is carefully selected, fully vetted, and built to be seamless from discovery to booking.
             </p>
@@ -89,7 +89,7 @@ export function TrustPillars() {
                 <h3 className="text-base font-semibold leading-snug text-white">
                   {pillar.title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: "#64748B" }}>
+                <p className="text-sm leading-relaxed" style={{ color: "#CBD5E1" }}>
                   {pillar.description}
                 </p>
               </div>

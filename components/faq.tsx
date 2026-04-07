@@ -8,11 +8,15 @@ import { ChevronDown } from "lucide-react"
 const FAQS = [
   {
     question: "What is SimplyEpic?",
-    answer: "SimplyEpic is a curated platform for booking high-quality adventure experiences. We focus on reliability, safety, and seamless booking so you can plan with confidence.",
+    answer: "SimplyEpic is a platform for booking high-quality adventure experiences. We focus on safety, reliability, and a seamless booking journey so you can plan with complete confidence.",
+  },
+  {
+    question: "How is this different from other travel platforms?",
+    answer: "SimplyEpic is a one of a kind platform built specifically for adventure. We partner only with qualified operators, place a strong emphasis on safety, and offer experiences for every level from beginner to advanced. Everything is clearly laid out upfront, so you know exactly what to expect before you book.",
   },
   {
     question: "What activities are included?",
-    answer: "We are bringing together a curated set of standout adventures across land, water, and air. Details will be revealed to early access members first.",
+    answer: "We are bringing together a select range of standout adventures across land, water, and air. Full details will be shared with early access members first.",
   },
   {
     question: "How are experiences selected?",
@@ -33,10 +37,6 @@ const FAQS = [
   {
     question: "Which destinations will be available?",
     answer: "We are starting with a select set of destinations in India and South East Asia. Early access members will get visibility of new destinations and activities first.",
-  },
-  {
-    question: "How is this different from other travel platforms?",
-    answer: "Most platforms focus on volume. We focus on quality. Every experience on SimplyEpic is selected to remove guesswork and deliver a consistently high standard.",
   },
 ]
 
