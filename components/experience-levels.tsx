@@ -41,7 +41,7 @@ export function ExperienceLevels() {
               <h2 className="text-3xl md:text-4xl font-semibold text-white leading-tight text-balance max-w-md">
                 Your first time or your hundredth. We have an experience for you.
               </h2>
-              <p className="text-sm leading-relaxed max-w-xs md:text-right" style={{ color: "#64748B" }}>
+              <p className="text-sm leading-relaxed max-w-xs md:text-right" style={{ color: "#CBD5E1" }}>
                 From a single afternoon to a full expedition. Every experience is guided, safe, and unforgettable.
               </p>
             </div>

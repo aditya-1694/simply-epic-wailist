@@ -187,7 +187,7 @@ export function WaitlistSection() {
             <h2 className="text-3xl md:text-4xl font-semibold text-white leading-tight text-balance max-w-lg">
               Sign up now. These perks are yours when we launch.
             </h2>
-            <p className="text-sm leading-relaxed max-w-xs md:text-right" style={{ color: "#64748B" }}>
+            <p className="text-sm leading-relaxed max-w-xs md:text-right" style={{ color: "#CBD5E1" }}>
               Only the first 200 members get access to these benefits. Once the spots are gone, they are gone.
             </p>
           </div>
