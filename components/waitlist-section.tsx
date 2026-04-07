@@ -146,9 +146,9 @@ export function WaitlistSection() {
         return
       }
 
-      // Redirect to the success page with the unique member ID
-      const id = data.id ?? "member"
-      router.push(`/join-success?id=${id}`)
+      // Redirect to the success page with the unique member UUID
+      const memberUuid = data.memberUuid ?? "member"
+      router.push(`/join-success?id=${memberUuid}`)
     } catch {
       setApiError("Network error. Please check your connection and try again.")
     } finally {

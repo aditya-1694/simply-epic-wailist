@@ -21,11 +21,11 @@ export async function POST(request: Request) {
     const result = await sql`
       INSERT INTO waitlist (name, email, phone, city, horizon, whatsapp)
       VALUES (${name}, ${email}, ${phone}, ${city}, ${horizon}, ${!!whatsapp})
-      RETURNING id
+      RETURNING member_uuid
     `
 
-    const id = result[0]?.id
-    return NextResponse.json({ success: true, id }, { status: 201 })
+    const memberUuid = result[0]?.member_uuid
+    return NextResponse.json({ success: true, memberUuid }, { status: 201 })
   } catch (err: unknown) {
     // Duplicate email — Postgres error code 23505
     if (
