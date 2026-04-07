@@ -7,22 +7,22 @@ const pillars = [
   {
     index: "01",
     title: "Vetted Without Compromise",
-    description: "Only the world's safest, internationally certified operators make the cut. Zero guesswork.",
+    description: "Only the world's <blue>safest, internationally certified</blue> operators make the cut. Zero guesswork.",
   },
   {
     index: "02",
     title: "Guided by Passionate Experts",
-    description: "From absolute beginners to veterans, every experience is led by passionate instructors who adapt to your pace.",
+    description: "From absolute beginners to veterans, every experience is led by <blue>passionate instructors</blue> who adapt to your pace.",
   },
   {
     index: "03",
     title: "Seamless from Discovery to Booking",
-    description: "Forget fragmented bookings and hidden costs. Seamless experience. Zero friction.",
+    description: "Forget fragmented bookings and <blue>hidden costs</blue>. Seamless experience. Zero friction.",
   },
   {
     index: "04",
     title: "Decades of Experience, Distilled",
-    description: "Backed by 30+ years in the travel industry, so nothing is left to chance.",
+    description: "Backed by <blue>30+ years in the travel industry</blue>, so nothing is left to chance.",
   },
 ]
 
@@ -47,9 +47,9 @@ export function TrustPillars() {
             </div>
             <p
               className="text-sm md:text-base leading-relaxed max-w-xs md:text-right"
-              style={{ color: "#64748B" }}
+              style={{ color: "#CBD5E1" }}
             >
-              Every experience is carefully selected, fully vetted, and built to be seamless from discovery to booking.
+              Every experience is <span style={{ color: "#3F9FFF", fontWeight: 500 }}>carefully selected, fully vetted</span>, and built to be seamless from discovery to booking.
             </p>
           </div>
         </DriftIn>
@@ -89,8 +89,18 @@ export function TrustPillars() {
                 <h3 className="text-base font-semibold leading-snug text-white">
                   {pillar.title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: "#64748B" }}>
-                  {pillar.description}
+                <p className="text-sm leading-relaxed" style={{ color: "#CBD5E1" }}>
+                  {pillar.description.split(/(<blue>.*?<\/blue>)/g).map((part, i) => {
+                    if (part.startsWith("<blue>")) {
+                      const text = part.replace(/<\/?blue>/g, "")
+                      return (
+                        <span key={i} style={{ color: "#3F9FFF", fontWeight: 500 }}>
+                          {text}
+                        </span>
+                      )
+                    }
+                    return <span key={i}>{part}</span>
+                  })}
                 </p>
               </div>
             </motion.div>
