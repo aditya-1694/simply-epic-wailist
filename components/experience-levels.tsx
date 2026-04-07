@@ -7,22 +7,22 @@ const MILESTONES = [
   {
     label: "Try it out",
     duration: "Half day",
-    description: "No experience needed. <blue>Just show up.</blue>",
+    description: "No experience needed. Just show up.",
   },
   {
     label: "Go deeper",
     duration: "Full day",
-    description: "Build <blue>confidence with expert guidance.</blue>",
+    description: "Build confidence with expert guidance.",
   },
   {
     label: "Commit",
     duration: "2 to 5 days",
-    description: "<blue>Immersive journeys</blue> for the dedicated.",
+    description: "Immersive journeys for the dedicated.",
   },
   {
     label: "Master it",
     duration: "Expeditions",
-    description: "<blue>Certifications</blue> and advanced challenges.",
+    description: "Certifications and advanced challenges.",
   },
 ]
 
@@ -118,17 +118,7 @@ export function ExperienceLevels() {
                       {m.duration}
                     </span>
                     <span className="text-xs leading-snug" style={{ color: "#CBD5E1", maxWidth: "120px" }}>
-                      {m.description.split(/(<blue>.*?<\/blue>)/g).map((part, i) => {
-                        if (part.startsWith("<blue>")) {
-                          const text = part.replace(/<\/?blue>/g, "")
-                          return (
-                            <span key={i} style={{ color: "#3F9FFF", fontWeight: 500 }}>
-                              {text}
-                            </span>
-                          )
-                        }
-                        return <span key={i}>{part}</span>
-                      })}
+                      {m.description}
                     </span>
                   </div>
                 </motion.div>
@@ -188,19 +178,7 @@ export function ExperienceLevels() {
                 <div className="flex flex-col gap-1">
                   <span className="text-sm font-semibold text-white leading-tight">{m.label}</span>
                   <span className="text-xs font-mono tracking-wide" style={{ color: "#3F9FFF" }}>{m.duration}</span>
-                  <span className="text-xs leading-relaxed" style={{ color: "#CBD5E1" }}>
-                    {m.description.split(/(<blue>.*?<\/blue>)/g).map((part, i) => {
-                      if (part.startsWith("<blue>")) {
-                        const text = part.replace(/<\/?blue>/g, "")
-                        return (
-                          <span key={i} style={{ color: "#3F9FFF", fontWeight: 500 }}>
-                            {text}
-                          </span>
-                        )
-                      }
-                      return <span key={i}>{part}</span>
-                    })}
-                  </span>
+                  <span className="text-xs leading-relaxed" style={{ color: "#CBD5E1" }}>{m.description}</span>
                 </div>
               </motion.div>
             ))}
