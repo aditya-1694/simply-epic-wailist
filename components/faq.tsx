@@ -12,7 +12,7 @@ const FAQS = [
   },
   {
     question: "How is this different from other travel platforms?",
-    answer: "Most platforms prioritise volume. We prioritise trust. Every experience is evaluated for safety, operator quality, and reliability so you can book without second guessing.",
+    answer: "SimplyEpic is a one of a kind platform built specifically for adventure. We partner only with qualified operators, place a strong emphasis on safety, and offer experiences for every level from beginner to advanced. Everything is clearly laid out upfront, so you know exactly what to expect before you book.",
   },
   {
     question: "What activities are included?",
