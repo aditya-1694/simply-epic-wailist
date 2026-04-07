@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { useRouter } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import { DriftIn } from "@/components/drift-in"
 import { Instagram } from "lucide-react"
@@ -77,6 +78,7 @@ function SlotMachineCounter({ targetValue }: { targetValue: number }) {
 }
 
 export function WaitlistSection() {
+  const router = useRouter()
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -144,13 +146,9 @@ export function WaitlistSection() {
         return
       }
 
-      // Decrement counter and show success
-      setRemaining((prev) => Math.max(0, prev - 1))
-      
-      // Wait 1 second before showing success
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      
-      setSubmitted(true)
+      // Redirect to the success page with the unique member ID
+      const id = data.id ?? "member"
+      router.push(`/join-success?id=${id}`)
     } catch {
       setApiError("Network error. Please check your connection and try again.")
     } finally {

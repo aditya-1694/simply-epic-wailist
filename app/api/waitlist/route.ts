@@ -18,12 +18,14 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Invalid email address." }, { status: 400 })
     }
 
-    await sql`
+    const result = await sql`
       INSERT INTO waitlist (name, email, phone, city, horizon, whatsapp)
       VALUES (${name}, ${email}, ${phone}, ${city}, ${horizon}, ${!!whatsapp})
+      RETURNING id
     `
 
-    return NextResponse.json({ success: true }, { status: 201 })
+    const id = result[0]?.id
+    return NextResponse.json({ success: true, id }, { status: 201 })
   } catch (err: unknown) {
     // Duplicate email — Postgres error code 23505
     if (
