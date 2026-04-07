@@ -10,7 +10,7 @@ const PERKS = [
   {
     icon: Percent,
     title: "15% Off First Activity",
-    description: "A founding member discount applied automatically to your first booking.",
+    description: "A founding member discount on your first activity.",
   },
   {
     icon: Star,
