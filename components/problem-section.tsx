@@ -25,7 +25,7 @@ export function ProblemSection() {
           <h2 className="text-4xl md:text-6xl font-semibold text-white tracking-tight leading-tight mb-2 text-balance">
             Most people never go.
           </h2>
-          <h2 className="text-4xl md:text-6xl font-light tracking-tight leading-tight mb-12 md:mb-16 italic text-balance" style={{ color: "#CBD5E1" }}>
+          <h2 className="text-2xl md:text-3xl font-normal tracking-tight leading-tight mb-12 md:mb-16 italic text-balance" style={{ color: "#CBD5E1" }}>
             Not because they don&apos;t want to.
           </h2>
         </DriftIn>
