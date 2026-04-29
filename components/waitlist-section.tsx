@@ -264,7 +264,7 @@ export function WaitlistSection() {
                     }}
                   >
                     <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 animate-pulse" style={{ backgroundColor: "#3F9FFF" }} />
-                    First 200 members only
+                    First 500 members only
                   </span>
                 </div>
 
