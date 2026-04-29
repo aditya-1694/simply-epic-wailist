@@ -11,32 +11,12 @@ const FAQS = [
     answer: "SimplyEpic is a platform for booking high-quality adventure experiences. We focus on safety, reliability, and a seamless booking journey so you can plan with complete confidence.",
   },
   {
-    question: "How is this different from other travel platforms?",
-    answer: "SimplyEpic is a one of a kind platform built specifically for adventure. We partner only with qualified operators, place a strong emphasis on safety, and offer experiences for every level from beginner to advanced. Everything is clearly laid out upfront, so you know exactly what to expect before you book.",
-  },
-  {
-    question: "What activities are included?",
-    answer: "We are bringing together a select range of standout adventures across land, water, and air. Full details will be shared with early access members first.",
-  },
-  {
-    question: "How are experiences selected?",
-    answer: "Every experience is carefully vetted based on safety standards, operator credentials, and overall quality. We only include operators we would trust ourselves.",
-  },
-  {
     question: "When will bookings open?",
     answer: "We are launching soon. Early access members will be the first to get notified of these experiences.",
   },
   {
-    question: "What do I get with early access?",
-    answer: "Early access gives you inaugural discounts, priority access to new activities and concierge access for your first trip with SimplyEpic.",
-  },
-  {
     question: "Is SimplyEpic only for experienced travellers?",
     answer: "No. We have experiences for all levels, including complete beginners. You will always know what to expect before you book.",
-  },
-  {
-    question: "Which destinations will be available?",
-    answer: "We are starting with a select set of destinations in India and South East Asia. Early access members will get visibility of new destinations and activities first.",
   },
 ]
 
@@ -56,7 +36,7 @@ export function FAQ() {
         </DriftIn>
 
         {/* FAQ Items */}
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 mb-12">
           {FAQS.map((faq, i) => (
             <motion.div
               key={i}
@@ -109,6 +89,15 @@ export function FAQ() {
             </motion.div>
           ))}
         </div>
+
+        {/* Closing message */}
+        <DriftIn>
+          <div className="text-center">
+            <p className="text-sm leading-relaxed italic" style={{ color: "#CBD5E1" }}>
+              That&apos;s all you need to know for now. The rest unfolds with the adventure. Stay tuned!
+            </p>
+          </div>
+        </DriftIn>
       </div>
     </section>
   )
