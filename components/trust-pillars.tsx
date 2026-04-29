@@ -45,12 +45,6 @@ export function TrustPillars() {
                 Built so you don&apos;t have to second guess.
               </h2>
             </div>
-            <p
-              className="text-sm md:text-base leading-relaxed max-w-xs md:text-right"
-              style={{ color: "#CBD5E1" }}
-            >
-              Every experience is carefully selected, fully vetted, and built to be seamless from discovery to booking.
-            </p>
           </div>
         </DriftIn>
 
