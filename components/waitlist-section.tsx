@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { DriftIn } from "@/components/drift-in"
 import { Instagram } from "lucide-react"
 
-const TOTAL_SPOTS = 200
+const TOTAL_SPOTS = 500
 
 const HORIZON_OPTIONS = [
   {
@@ -82,6 +82,7 @@ export function WaitlistSection() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    dob: "",
     countryCode: "+91",
     phone: "",
     city: "",
@@ -133,6 +134,7 @@ export function WaitlistSection() {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
+          dob: formData.dob || null,
           phone: `${formData.countryCode} ${formData.phone}`,
           city: formData.city,
           horizon: formData.horizon,
@@ -169,10 +171,10 @@ export function WaitlistSection() {
       style={{ backgroundColor: "#050505" }}
     >
       {/* Side-by-side on desktop, stacked on mobile */}
-      <div className="w-full max-w-6xl flex flex-col lg:flex-row lg:items-start gap-10 lg:gap-16">
+      <div className="w-full max-w-6xl flex flex-col lg:flex-row lg:items-stretch gap-10 lg:gap-16">
 
         {/* Perks Section */}
-        <div className="flex-1 min-w-0">
+        <div className="flex-1 min-w-0 flex flex-col justify-between">
           {/* Header */}
           <motion.div
             className="mb-7"
@@ -302,6 +304,21 @@ export function WaitlistSection() {
                     {errors.email && (
                       <p className="text-xs mt-2" style={{ color: "#ff6b6b" }}>{errors.email}</p>
                     )}
+                  </div>
+
+                  {/* Date of Birth */}
+                  <div>
+                    <label className="block text-xs tracking-widest uppercase mb-2" style={{ color: "#94A3B8" }}>
+                      Date of Birth
+                    </label>
+                    <input
+                      type="date"
+                      value={formData.dob}
+                      onChange={(e) => setFormData({ ...formData, dob: e.target.value })}
+                      className={inputClass}
+                      aria-label="Date of birth"
+                      style={{ colorScheme: "dark" }}
+                    />
                   </div>
 
                   {/* Phone: Country Code + Number */}

@@ -8,7 +8,7 @@ export async function POST(request: Request) {
     }
 
     const sql = neon(process.env.DATABASE_URL)
-    const { name, email, phone, city, horizon, whatsapp } = await request.json()
+    const { name, email, phone, city, horizon, whatsapp, dob } = await request.json()
 
     // Basic server-side validation
     if (!name || !email || !phone || !city || !horizon) {
@@ -19,8 +19,8 @@ export async function POST(request: Request) {
     }
 
     const result = await sql`
-      INSERT INTO waitlist (name, email, phone, city, horizon, whatsapp)
-      VALUES (${name}, ${email}, ${phone}, ${city}, ${horizon}, ${!!whatsapp})
+      INSERT INTO waitlist (name, email, phone, city, horizon, whatsapp, dob)
+      VALUES (${name}, ${email}, ${phone}, ${city}, ${horizon}, ${!!whatsapp}, ${dob || null})
       RETURNING member_uuid
     `
 
