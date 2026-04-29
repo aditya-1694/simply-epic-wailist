@@ -216,11 +216,8 @@ export function WaitlistSection() {
                 </span>
               </div>
 
-              {/* Right: title + description */}
-              <div className="flex flex-col justify-center gap-1 flex-1 sm:pl-6">
-                <h3 className="text-sm font-semibold text-white leading-snug">
-                  {perk.title}
-                </h3>
+              {/* Right: description only */}
+              <div className="flex items-center flex-1 sm:pl-6">
                 <p className="text-xs leading-relaxed" style={{ color: "#CBD5E1" }}>
                   {perk.description}
                 </p>
