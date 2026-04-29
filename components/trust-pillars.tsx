@@ -1,33 +1,95 @@
 "use client"
 
 import { DriftIn } from "@/components/drift-in"
+import { motion } from "framer-motion"
+
+const pillars = [
+  {
+    index: "01",
+    title: "Vetted Without Compromise",
+    description: "Only the world's safest, internationally certified operators make the cut. Zero guesswork.",
+  },
+  {
+    index: "02",
+    title: "Guided by Passionate Experts",
+    description: "From absolute beginners to veterans, every experience is led by passionate instructors who adapt to your pace.",
+  },
+  {
+    index: "03",
+    title: "Seamless from Discovery to Booking",
+    description: "Forget fragmented bookings and hidden costs. Seamless experience. Zero friction.",
+  },
+  {
+    index: "04",
+    title: "Decades of Experience, Distilled",
+    description: "Backed by 30+ years in the travel industry, so nothing is left to chance.",
+  },
+]
 
 export function TrustPillars() {
   return (
     <section className="py-16 md:py-24 px-6 md:px-16" style={{ backgroundColor: "#0a0a0a" }}>
       <div className="max-w-6xl mx-auto">
 
-        {/* Eyebrow */}
+        {/* Header Row */}
         <DriftIn>
-          <div className="flex items-center gap-4 mb-10">
-            <p
-              className="text-xs tracking-[0.25em] uppercase font-medium"
-              style={{ color: "#3F9FFF" }}
-            >
-              A new way to book adventure
-            </p>
-            <div className="h-px w-16" style={{ backgroundColor: "rgba(63,159,255,0.4)" }} />
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+            <div>
+              <p
+                className="text-xs tracking-[0.25em] uppercase mb-4 font-medium"
+                style={{ color: "#3F9FFF" }}
+              >
+                A new way to book adventure
+              </p>
+              <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-white leading-tight max-w-xl text-balance">
+                Built so you don&apos;t have to second guess.
+              </h2>
+            </div>
           </div>
         </DriftIn>
 
-        {/* Statement */}
-        <DriftIn delay={0.1}>
-          <p className="text-3xl md:text-5xl font-semibold text-white tracking-tight leading-tight text-balance max-w-3xl">
-            This platform makes hard adventures{" "}
-            <span style={{ color: "#CBD5E1", fontWeight: 300, fontStyle: "italic" }}>easy to find, book and</span>{" "}
-            <span style={{ color: "#3F9FFF" }}>LIVE.</span>
-          </p>
-        </DriftIn>
+        {/* Divider */}
+        <div className="w-full h-px mb-12" style={{ backgroundColor: "rgba(63,159,255,0.12)" }} />
+
+        {/* Pillars Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style={{ backgroundColor: "rgba(63,159,255,0.08)" }}>
+          {pillars.map((pillar, i) => (
+            <motion.div
+              key={pillar.index}
+              className="group flex flex-col gap-6 p-7 transition-all duration-500 cursor-default"
+              style={{ backgroundColor: "#0a0a0a" }}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, ease: "easeOut", delay: i * 0.08 }}
+              viewport={{ once: true, amount: 0.2 }}
+              whileHover={{ backgroundColor: "#0f1117" }}
+            >
+              {/* Index */}
+              <span
+                className="text-xs font-mono tracking-widest transition-colors duration-300 group-hover:text-white"
+                style={{ color: "rgba(63,159,255,0.5)" }}
+              >
+                {pillar.index}
+              </span>
+
+              {/* Accent line */}
+              <div
+                className="w-6 h-px transition-all duration-500 group-hover:w-12"
+                style={{ backgroundColor: "#3F9FFF" }}
+              />
+
+              {/* Content */}
+              <div className="flex flex-col gap-3 flex-1">
+                <h3 className="text-base font-semibold leading-snug text-white">
+                  {pillar.title}
+                </h3>
+                <p className="text-sm leading-relaxed" style={{ color: "#CBD5E1" }}>
+                  {pillar.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
 
       </div>
     </section>
