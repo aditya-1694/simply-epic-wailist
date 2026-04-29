@@ -14,7 +14,7 @@ export function ProblemSection() {
               className="text-xs tracking-[0.25em] uppercase font-medium"
               style={{ color: "#3F9FFF" }}
             >
-              The Problem
+              Why Adventure Stays a Dream
             </p>
             <div className="h-px w-16" style={{ backgroundColor: "rgba(63,159,255,0.4)" }} />
           </div>
@@ -34,10 +34,10 @@ export function ProblemSection() {
         <DriftIn delay={0.2}>
           <div className="flex flex-col gap-6 max-w-2xl">
             <p className="text-sm md:text-base leading-relaxed" style={{ color: "#CBD5E1" }}>
-              You don&apos;t know which operator to trust. Pricing is vague. Quality is inconsistent.
+              They don&apos;t know which operator to trust. Pricing is vague. Quality is inconsistent. Safety feels compromised.
             </p>
             <p className="text-sm md:text-base leading-relaxed" style={{ color: "#CBD5E1" }}>
-              And if you&apos;re doing this for the first time, where do you even begin?
+              And if anyone is doing this for the first time, where do they even begin?
             </p>
             <p className="text-sm md:text-base leading-relaxed" style={{ color: "#CBD5E1" }}>
               Adventure shouldn&apos;t feel this hard to access.
