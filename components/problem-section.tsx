@@ -39,9 +39,6 @@ export function ProblemSection() {
             <p className="text-sm md:text-base leading-relaxed" style={{ color: "#CBD5E1" }}>
               And if anyone is doing this for the first time, where do they even begin?
             </p>
-            <p className="text-sm md:text-base leading-relaxed" style={{ color: "#CBD5E1" }}>
-              Adventure shouldn&apos;t feel this hard to access.
-            </p>
           </div>
         </DriftIn>
 
