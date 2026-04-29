@@ -171,28 +171,28 @@ export function WaitlistSection() {
       style={{ backgroundColor: "#050505" }}
     >
       {/* Side-by-side on desktop, stacked on mobile */}
-      <div className="w-full max-w-6xl flex flex-col lg:flex-row lg:items-stretch gap-10 lg:gap-16">
+      <div className="w-full max-w-6xl flex flex-col lg:flex-row lg:items-stretch gap-10 lg:gap-12">
 
-        {/* Perks Section */}
-        <div className="flex-1 min-w-0 flex flex-col justify-between">
+        {/* Perks Section — 38% width on desktop */}
+        <div className="lg:w-[38%] flex-shrink-0 flex flex-col">
           {/* Header */}
           <motion.div
-            className="mb-7"
+            className="mb-6"
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <p className="text-xs tracking-[0.25em] uppercase mb-4 font-medium" style={{ color: "#3F9FFF" }}>
+            <p className="text-xs tracking-[0.25em] uppercase mb-3 font-medium" style={{ color: "#3F9FFF" }}>
               Founding member benefits
             </p>
-            <h2 className="text-3xl md:text-4xl font-semibold text-white leading-tight text-balance max-w-lg">
+            <h2 className="text-2xl md:text-3xl font-semibold text-white leading-tight text-balance">
               Sign up now. These perks are yours when we launch.
             </h2>
           </motion.div>
 
-          {/* Perks List */}
-          <div className="flex flex-col gap-3 mt-2">
+          {/* Perks List — flex-1 + justify-around to fill remaining height */}
+          <div className="flex flex-col flex-1 justify-around gap-2">
             {PERKS.map((perk, i) => (
               <motion.div
                 key={perk.title}
@@ -200,7 +200,7 @@ export function WaitlistSection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.55, ease: "easeOut", delay: i * 0.1 }}
                 viewport={{ once: true, amount: 0.3 }}
-                className="group flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-0 px-4 py-3 rounded-sm border transition-all duration-300 hover:border-[rgba(63,159,255,0.35)] hover:shadow-[0_0_30px_rgba(63,159,255,0.07)]"
+                className="group flex items-center gap-0 px-4 py-3 rounded-sm border transition-all duration-300 hover:border-[rgba(63,159,255,0.35)] hover:shadow-[0_0_30px_rgba(63,159,255,0.07)]"
                 style={{
                   backgroundColor: "rgba(255,255,255,0.02)",
                   borderColor: "rgba(255,255,255,0.06)",
@@ -208,11 +208,11 @@ export function WaitlistSection() {
               >
                 {/* Left: highlight value */}
                 <div
-                  className="flex-shrink-0 w-full sm:w-40 flex flex-col justify-center gap-1 border-b sm:border-b-0 sm:border-r pb-3 sm:pb-0 sm:pr-6"
+                  className="flex-shrink-0 w-32 flex items-center border-r pr-4"
                   style={{ borderColor: "rgba(63,159,255,0.1)" }}
                 >
                   <span
-                    className="text-lg md:text-xl font-bold tracking-tight leading-none"
+                    className="text-base font-bold tracking-tight leading-none"
                     style={{ color: "#3F9FFF" }}
                   >
                     {perk.highlight}
@@ -220,7 +220,7 @@ export function WaitlistSection() {
                 </div>
 
                 {/* Right: description only */}
-                <div className="flex items-center flex-1 sm:pl-6">
+                <div className="flex items-center flex-1 pl-4">
                   <p className="text-xs leading-relaxed" style={{ color: "#CBD5E1" }}>
                     {perk.description}
                   </p>
@@ -230,8 +230,8 @@ export function WaitlistSection() {
           </div>
         </div>
 
-        {/* Form Section */}
-        <DriftIn className="w-full lg:w-[420px] flex-shrink-0">
+        {/* Form Section — takes remaining width */}
+        <DriftIn className="flex-1 min-w-0">
         <div
           className="rounded-lg border p-6 md:p-8"
           style={{
