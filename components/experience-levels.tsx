@@ -31,23 +31,6 @@ export function ExperienceLevels() {
     <section className="py-16 md:py-24 px-6 md:px-16" style={{ backgroundColor: "#050505" }}>
       <div className="max-w-6xl mx-auto">
 
-        {/* Header */}
-        <DriftIn>
-          <div className="mb-14">
-            <p className="text-xs tracking-[0.25em] uppercase mb-4 font-medium" style={{ color: "#3F9FFF" }}>
-              Built for everyone
-            </p>
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-              <h2 className="text-3xl md:text-4xl font-semibold text-white leading-tight text-balance max-w-md">
-                Your first time or your hundredth. We have an experience for you.
-              </h2>
-              <p className="text-sm leading-relaxed max-w-xs md:text-right" style={{ color: "#CBD5E1" }}>
-                From a single afternoon to a full expedition. Every experience is guided, safe, and unforgettable.
-              </p>
-            </div>
-          </div>
-        </DriftIn>
-
         <div className="w-full h-px mb-14" style={{ backgroundColor: "rgba(63,159,255,0.1)" }} />
 
         {/* ── Desktop: horizontal spectrum ── */}
