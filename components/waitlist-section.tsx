@@ -165,14 +165,14 @@ export function WaitlistSection() {
   return (
     <section
       id="waitlist"
-      className="relative py-16 md:py-24 px-6 md:px-10 flex flex-col items-center justify-center overflow-hidden"
+      className="relative py-10 md:py-16 px-6 md:px-10 flex flex-col items-center justify-center overflow-hidden"
       style={{ backgroundColor: "#050505" }}
     >
       {/* Perks Section */}
-      <div className="w-full max-w-6xl mb-20">
+      <div className="w-full max-w-6xl mb-10">
         {/* Header */}
         <motion.div
-          className="mb-12"
+          className="mb-7"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -185,14 +185,11 @@ export function WaitlistSection() {
             <h2 className="text-3xl md:text-4xl font-semibold text-white leading-tight text-balance max-w-lg">
               Sign up now. These perks are yours when we launch.
             </h2>
-            <p className="text-sm leading-relaxed max-w-xs md:text-right" style={{ color: "#CBD5E1" }}>
-              Only the first 200 members get access to these benefits. Once the spots are gone, they are gone.
-            </p>
           </div>
         </motion.div>
 
         {/* Perks List */}
-        <div className="flex flex-col gap-4 mt-2">
+        <div className="flex flex-col gap-3 mt-2">
           {PERKS.map((perk, i) => (
             <motion.div
               key={perk.title}
@@ -200,59 +197,46 @@ export function WaitlistSection() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.55, ease: "easeOut", delay: i * 0.1 }}
               viewport={{ once: true, amount: 0.3 }}
-              className="group flex flex-col sm:flex-row sm:items-stretch gap-5 sm:gap-0 px-7 py-6 rounded-sm border transition-all duration-300 hover:border-[rgba(63,159,255,0.35)] hover:shadow-[0_0_30px_rgba(63,159,255,0.07)]"
+              className="group flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-0 px-4 py-3 rounded-sm border transition-all duration-300 hover:border-[rgba(63,159,255,0.35)] hover:shadow-[0_0_30px_rgba(63,159,255,0.07)]"
               style={{
                 backgroundColor: "rgba(255,255,255,0.02)",
                 borderColor: "rgba(255,255,255,0.06)",
               }}
             >
-              {/* Left: big highlight value */}
+              {/* Left: highlight value */}
               <div
-                className="flex-shrink-0 w-full sm:w-48 flex flex-col justify-center gap-1 border-b sm:border-b-0 sm:border-r pb-4 sm:pb-0 sm:pr-10"
+                className="flex-shrink-0 w-full sm:w-40 flex flex-col justify-center gap-1 border-b sm:border-b-0 sm:border-r pb-3 sm:pb-0 sm:pr-6"
                 style={{ borderColor: "rgba(63,159,255,0.1)" }}
               >
                 <span
-                  className="text-2xl md:text-3xl font-bold tracking-tight leading-none"
+                  className="text-lg md:text-xl font-bold tracking-tight leading-none"
                   style={{ color: "#3F9FFF" }}
                 >
                   {perk.highlight}
                 </span>
-                <span className="text-xs font-mono tracking-widest mt-2" style={{ color: "rgba(255,255,255,0.2)" }}>
-                  {perk.index}
-                </span>
               </div>
 
               {/* Right: title + description */}
-              <div className="flex flex-col justify-center gap-2 flex-1 sm:pl-10">
-                <h3 className="text-base font-semibold text-white leading-snug">
+              <div className="flex flex-col justify-center gap-1 flex-1 sm:pl-6">
+                <h3 className="text-sm font-semibold text-white leading-snug">
                   {perk.title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: "#CBD5E1" }}>
+                <p className="text-xs leading-relaxed" style={{ color: "#CBD5E1" }}>
                   {perk.description}
                 </p>
               </div>
-
-              {/* Arrow indicator */}
-              <motion.div
-                className="hidden sm:flex flex-shrink-0 items-center text-sm pl-6"
-                style={{ color: "rgba(63,159,255,0.3)" }}
-                animate={{ x: 0 }}
-                whileHover={{ x: 4 }}
-              >
-                →
-              </motion.div>
             </motion.div>
           ))}
         </div>
 
         {/* Divider */}
-        <div className="w-full h-px mt-14 mb-0" style={{ backgroundColor: "rgba(63,159,255,0.1)" }} />
+        <div className="w-full h-px mt-8 mb-0" style={{ backgroundColor: "rgba(63,159,255,0.1)" }} />
       </div>
 
       {/* Form Section */}
       <DriftIn className="w-full max-w-xl">
         <div
-          className="rounded-lg border p-8 md:p-12"
+          className="rounded-lg border p-6 md:p-8"
           style={{
             backdropFilter: "blur(24px)",
             WebkitBackdropFilter: "blur(24px)",
@@ -270,7 +254,7 @@ export function WaitlistSection() {
                 transition={{ duration: 0.5 }}
               >
                 {/* Urgency Pill */}
-                <div className="flex justify-center mb-8">
+                <div className="flex justify-center mb-5">
                   <span
                     className="inline-flex items-center gap-2 text-xs font-medium px-4 py-1.5 rounded-full"
                     style={{
@@ -280,12 +264,12 @@ export function WaitlistSection() {
                     }}
                   >
                     <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 animate-pulse" style={{ backgroundColor: "#3F9FFF" }} />
-                    First 200 members only
+                    First 500 members only
                   </span>
                 </div>
 
                 {/* Form Title */}
-                <div className="text-center mb-8">
+                <div className="text-center mb-5">
                   <h2 className="text-xl md:text-2xl font-semibold text-white text-balance">
                     Secure your early access
                   </h2>
@@ -294,7 +278,7 @@ export function WaitlistSection() {
                   </p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="flex flex-col gap-6" noValidate>
+                <form onSubmit={handleSubmit} className="flex flex-col gap-4" noValidate>
                   {/* Full Name */}
                   <div>
                     <input

@@ -7,7 +7,7 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Simply Epic - Waitlist',
+  title: 'SimplyEpic - Waitlist',
   description: 'The world\'s most epic adventures. Vetted. Simplified. Join the founding 300.',
   generator: 'v0.app',
   icons: {

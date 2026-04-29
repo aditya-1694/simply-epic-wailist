@@ -7,22 +7,17 @@ const pillars = [
   {
     index: "01",
     title: "Vetted Without Compromise",
-    description: "Only the world's safest, internationally certified operators make the cut. Zero guesswork.",
+    description: "Only internationally certified operators make the cut.",
   },
   {
     index: "02",
-    title: "Guided by Passionate Experts",
-    description: "From absolute beginners to veterans, every experience is led by passionate instructors who adapt to your pace.",
+    title: "Built for Every Level, Including Zero",
+    description: "From complete beginners to seasoned adventurers, every experience is led by instructors who adapt to your pace.",
   },
   {
     index: "03",
     title: "Seamless from Discovery to Booking",
-    description: "Forget fragmented bookings and hidden costs. Seamless experience. Zero friction.",
-  },
-  {
-    index: "04",
-    title: "Decades of Experience, Distilled",
-    description: "Backed by 30+ years in the travel industry, so nothing is left to chance.",
+    description: "No hidden costs. No fragmented booking. Zero friction.",
   },
 ]
 
@@ -45,12 +40,6 @@ export function TrustPillars() {
                 Built so you don&apos;t have to second guess.
               </h2>
             </div>
-            <p
-              className="text-sm md:text-base leading-relaxed max-w-xs md:text-right"
-              style={{ color: "#CBD5E1" }}
-            >
-              Every experience is carefully selected, fully vetted, and built to be seamless from discovery to booking.
-            </p>
           </div>
         </DriftIn>
 
@@ -58,7 +47,7 @@ export function TrustPillars() {
         <div className="w-full h-px mb-12" style={{ backgroundColor: "rgba(63,159,255,0.12)" }} />
 
         {/* Pillars Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px" style={{ backgroundColor: "rgba(63,159,255,0.08)" }}>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-px" style={{ backgroundColor: "rgba(63,159,255,0.08)" }}>
           {pillars.map((pillar, i) => (
             <motion.div
               key={pillar.index}

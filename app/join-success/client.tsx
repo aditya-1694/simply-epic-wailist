@@ -145,7 +145,7 @@ export function SuccessPageClient({ memberName }: { memberName: string | null })
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.35 }}
         >
-          You are among the first 200. We will be in touch when SimplyEpic goes live.
+          You are among the first 500. We will be in touch when SimplyEpic goes live.
         </motion.p>
 
         {/* Divider */}
