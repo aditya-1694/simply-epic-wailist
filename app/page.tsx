@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/navbar"
 import { HeroSection } from "@/components/hero-section"
+import { ProblemSection } from "@/components/problem-section"
 import { VibeCards } from "@/components/vibe-cards"
 import { ExperienceLevels } from "@/components/experience-levels"
 import { TrustPillars } from "@/components/trust-pillars"
@@ -13,6 +14,7 @@ export default function Home() {
     <main style={{ backgroundColor: "#050505", color: "#ffffff" }}>
       <Navbar />
       <HeroSection />
+      <ProblemSection />
       <TrustPillars />
       <VibeCards />
       <ExperienceLevels />
