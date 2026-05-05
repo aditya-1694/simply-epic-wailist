@@ -192,39 +192,31 @@ export function WaitlistSection() {
           </motion.div>
 
           {/* Perks List — flex-1 + justify-around to fill remaining height */}
-          <div className="flex flex-col flex-1 justify-around gap-2">
+          <div className="flex flex-col flex-1 justify-around">
             {PERKS.map((perk, i) => (
               <motion.div
                 key={perk.title}
-                initial={{ opacity: 0, x: -16 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 8 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.55, ease: "easeOut", delay: i * 0.1 }}
                 viewport={{ once: true, amount: 0.3 }}
-                className="group flex items-center gap-0 px-4 py-3 rounded-sm border transition-all duration-300 hover:border-[rgba(63,159,255,0.35)] hover:shadow-[0_0_30px_rgba(63,159,255,0.07)]"
+                className="py-5 flex flex-col gap-2"
                 style={{
-                  backgroundColor: "rgba(255,255,255,0.02)",
-                  borderColor: "rgba(255,255,255,0.06)",
+                  borderBottom: i < PERKS.length - 1 ? "1px solid rgba(63,159,255,0.12)" : "none",
                 }}
               >
-                {/* Left: highlight value */}
-                <div
-                  className="flex-shrink-0 w-32 flex items-center border-r pr-4"
-                  style={{ borderColor: "rgba(63,159,255,0.1)" }}
+                {/* Highlight value — large and bold */}
+                <span
+                  className="text-lg md:text-xl font-bold tracking-tight leading-none"
+                  style={{ color: "#3F9FFF" }}
                 >
-                  <span
-                    className="text-base font-bold tracking-tight leading-none"
-                    style={{ color: "#3F9FFF" }}
-                  >
-                    {perk.highlight}
-                  </span>
-                </div>
+                  {perk.highlight}
+                </span>
 
-                {/* Right: description only */}
-                <div className="flex items-center flex-1 pl-4">
-                  <p className="text-xs leading-relaxed" style={{ color: "#CBD5E1" }}>
-                    {perk.description}
-                  </p>
-                </div>
+                {/* Description — small and muted */}
+                <p className="text-xs leading-relaxed" style={{ color: "#CBD5E1" }}>
+                  {perk.description}
+                </p>
               </motion.div>
             ))}
           </div>
