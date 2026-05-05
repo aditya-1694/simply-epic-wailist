@@ -9,15 +9,12 @@ export function ProblemSection() {
 
         {/* Eyebrow */}
         <DriftIn>
-          <div className="flex items-center gap-4 mb-10">
-            <p
-              className="text-xs tracking-[0.25em] uppercase font-medium"
-              style={{ color: "#3F9FFF" }}
-            >
-              Why Adventure Stays a Dream
-            </p>
-            <div className="h-px w-16" style={{ backgroundColor: "rgba(63,159,255,0.4)" }} />
-          </div>
+          <p
+            className="text-xs tracking-[0.25em] uppercase mb-4 font-medium"
+            style={{ color: "#3F9FFF" }}
+          >
+            Why Adventure Stays a Dream
+          </p>
         </DriftIn>
 
         {/* Headline */}
