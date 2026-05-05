@@ -35,7 +35,7 @@ export function HeroSection() {
       <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-5xl mx-auto">
         <DriftIn delay={0.1}>
           <h1
-            className="text-shimmer font-bold leading-tight tracking-tight text-balance mb-6"
+            className="text-shimmer font-semibold leading-tight tracking-tight text-balance mb-6"
             style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)" }}
           >
             The World&apos;s Most Epic Adventures.
@@ -43,41 +43,30 @@ export function HeroSection() {
         </DriftIn>
 
         <DriftIn delay={0.2}>
-          <h2 className="text-2xl md:text-3xl font-light italic text-white mb-6 leading-tight text-balance">
-            Handpicked experiences. Trusted operators. Zero second-guessing.
-          </h2>
-        </DriftIn>
-
-        <DriftIn delay={0.25}>
-          <p className="text-base md:text-lg leading-relaxed max-w-2xl mb-10 text-white">
-            Seamless to discover. Effortless to book.{" "}
-            <span style={{ color: "white", fontWeight: "bold" }}>Simply</span>
-            <span style={{ color: "#3F9FFF", fontWeight: "bold" }}>Epic.</span>
-          </p>
+          <h3 className="text-2xl md:text-3xl font-light italic leading-tight text-balance mb-16 text-white">
+            Handpicked experiences. Trusted operators.{" "}
+            <span style={{ color: "white", fontWeight: "bold" }}>Adventure simplified.</span>
+          </h3>
         </DriftIn>
 
         <DriftIn delay={0.4}>
-          <a href="#waitlist">
-            <button
-              className="relative px-8 py-4 text-sm font-semibold tracking-widest uppercase text-white border rounded-sm transition-all duration-500 group"
-              style={{
-                borderColor: "#3F9FFF",
-                background: "transparent",
-              }}
-              onMouseEnter={(e) => {
-                const el = e.currentTarget
-                el.style.background = "#3F9FFF"
-                el.style.boxShadow = "0 0 20px rgba(63,159,255,0.4)"
-              }}
-              onMouseLeave={(e) => {
-                const el = e.currentTarget
-                el.style.background = "transparent"
-                el.style.boxShadow = "none"
-              }}
-            >
-              Secure Early Access
-            </button>
-          </a>
+          <div className="flex flex-col items-center gap-16">
+            {/* Scroll indicator */}
+            <div className="flex flex-col items-center gap-2">
+              <p className="text-xs tracking-widest uppercase" style={{ color: "#94A3B8" }}>
+                Scroll to explore
+              </p>
+              <svg
+                className="w-5 h-5 animate-bounce"
+                style={{ color: "#3F9FFF" }}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </div>
+          </div>
         </DriftIn>
       </div>
     </section>
