@@ -5,7 +5,7 @@ import { DriftIn } from "@/components/drift-in"
 export function ProblemSection() {
   return (
     <section className="py-16 md:py-24 px-6 md:px-16" style={{ backgroundColor: "#050505" }}>
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
 
         {/* Eyebrow */}
         <DriftIn>
@@ -32,7 +32,7 @@ export function ProblemSection() {
 
         {/* Body paragraphs */}
         <DriftIn delay={0.2}>
-          <div className="flex flex-col gap-6 max-w-2xl">
+          <div className="flex flex-col gap-6 max-w-xl">
             <p className="text-sm md:text-base leading-relaxed" style={{ color: "#CBD5E1" }}>
               They don&apos;t know which operator to trust. Pricing is vague. Quality is inconsistent. Safety feels compromised.
             </p>
