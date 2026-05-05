@@ -471,6 +471,11 @@ export function WaitlistSection() {
                   >
                     {submitting ? "Securing your spot..." : "JOIN THE INNER CIRCLE"}
                   </button>
+
+                  {/* Subtext under CTA */}
+                  <p className="text-xs text-center mt-4" style={{ color: "#64748B" }}>
+                    No spam. Just the good stuff, when it&apos;s ready.
+                  </p>
                 </form>
               </motion.div>
             ) : (
