@@ -9,8 +9,8 @@ import Image from "next/image"
 const PERKS = [
   {
     icon: Percent,
-    title: "15% Off First Activity",
-    description: "A founding member discount on your first activity.",
+    title: "15% for the whole year",
+    description: "Sign up now and get 15% off up to ₹2,000 on every experience you book in your first year. No limits.",
   },
   {
     icon: Star,
