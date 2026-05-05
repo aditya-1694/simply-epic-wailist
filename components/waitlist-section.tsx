@@ -32,7 +32,7 @@ const PERKS = [
     index: "01",
     title: "15% for the whole year",
     highlight: "15% off",
-    description: "Sign up now and enjoy 15% off up to ₹2,000 each on five premium experiences across your first year.",
+    description: "Sign up now and get 15% off up to ₹2,000 on every experience you book in your first year. No limits.",
   },
   {
     index: "02",
