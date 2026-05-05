@@ -35,7 +35,7 @@ export function HeroSection() {
       <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-5xl mx-auto">
         <DriftIn delay={0.1}>
           <h1
-            className="text-shimmer font-bold leading-tight tracking-tight text-balance mb-6"
+            className="text-shimmer font-semibold leading-tight tracking-tight text-balance mb-6"
             style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)" }}
           >
             The World&apos;s Most Epic Adventures.
@@ -43,7 +43,7 @@ export function HeroSection() {
         </DriftIn>
 
         <DriftIn delay={0.2}>
-          <h3 className="text-2xl md:text-3xl font-semibold leading-tight text-balance mb-16 text-white">
+          <h3 className="text-2xl md:text-3xl font-light italic leading-tight text-balance mb-16 text-white">
             Handpicked experiences. Trusted operators.{" "}
             <span style={{ color: "white", fontWeight: "bold" }}>Adventure simplified.</span>
           </h3>
