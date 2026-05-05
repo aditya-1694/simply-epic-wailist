@@ -32,40 +32,40 @@ export function HeroSection() {
         aria-hidden="true"
       />
 
-      <div className="relative z-10 w-full h-full flex flex-col items-center justify-between px-6 py-16">
-        <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
-          <DriftIn delay={0.1}>
-            <h1
-              className="text-shimmer font-semibold leading-tight tracking-tight text-balance mb-6"
-              style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)" }}
-            >
-              The World&apos;s Most Epic Adventures.
-            </h1>
-          </DriftIn>
+      <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-5xl mx-auto">
+        <DriftIn delay={0.1}>
+          <h1
+            className="text-shimmer font-semibold leading-tight tracking-tight text-balance mb-6"
+            style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)" }}
+          >
+            The World&apos;s Most Epic Adventures.
+          </h1>
+        </DriftIn>
 
-          <DriftIn delay={0.2}>
-            <h3 className="text-2xl md:text-3xl font-light italic leading-tight text-balance text-white">
-              Handpicked experiences. Trusted operators.{" "}
-              <span style={{ color: "white", fontWeight: "bold" }}>Adventure simplified.</span>
-            </h3>
-          </DriftIn>
-        </div>
+        <DriftIn delay={0.2}>
+          <h3 className="text-2xl md:text-3xl font-light italic leading-tight text-balance mb-16 text-white">
+            Handpicked experiences. Trusted operators.{" "}
+            <span style={{ color: "white", fontWeight: "bold" }}>Adventure simplified.</span>
+          </h3>
+        </DriftIn>
 
-        {/* Scroll indicator at bottom */}
         <DriftIn delay={0.4}>
-          <div className="flex flex-col items-center gap-2">
-            <p className="text-xs tracking-widest uppercase" style={{ color: "#94A3B8" }}>
-              Scroll to explore
-            </p>
-            <svg
-              className="w-5 h-5 animate-bounce"
-              style={{ color: "#3F9FFF" }}
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
+          <div className="flex flex-col items-center gap-16">
+            {/* Scroll indicator */}
+            <div className="flex flex-col items-center gap-2">
+              <p className="text-xs tracking-widest uppercase" style={{ color: "#94A3B8" }}>
+                Scroll to explore
+              </p>
+              <svg
+                className="w-5 h-5 animate-bounce"
+                style={{ color: "#3F9FFF" }}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </div>
           </div>
         </DriftIn>
       </div>
