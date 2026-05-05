@@ -43,14 +43,14 @@ export function HeroSection() {
         </DriftIn>
 
         <DriftIn delay={0.2}>
-          <p className="text-base md:text-lg leading-relaxed max-w-2xl mb-12 text-white">
+          <h3 className="text-2xl md:text-3xl font-semibold leading-tight text-balance mb-16 text-white">
             Handpicked experiences. Trusted operators.{" "}
-            <span style={{ color: "#3F9FFF", fontWeight: "bold" }}>Adventure simplified.</span>
-          </p>
+            <span style={{ color: "white", fontWeight: "bold" }}>Adventure simplified.</span>
+          </h3>
         </DriftIn>
 
         <DriftIn delay={0.4}>
-          <div className="flex flex-col items-center gap-8">
+          <div className="flex flex-col items-center gap-16">
             {/* Scroll indicator */}
             <div className="flex flex-col items-center gap-2">
               <p className="text-xs tracking-widest uppercase" style={{ color: "#94A3B8" }}>
