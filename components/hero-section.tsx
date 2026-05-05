@@ -44,7 +44,7 @@ export function HeroSection() {
 
         <DriftIn delay={0.2}>
           <h2 className="text-2xl md:text-3xl font-semibold text-white mb-6 leading-tight text-balance">
-            Vetted. Simplified.
+            Handpicked adventures. Trusted operators. Zero second-guessing.
           </h2>
         </DriftIn>
 
