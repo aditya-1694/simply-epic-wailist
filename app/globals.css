@@ -36,8 +36,7 @@
 }
 
 @theme inline {
-  --font-sans: 'Inter', 'Inter Fallback';
-  --font-serif: 'Cormorant Garamond', 'Georgia', serif;
+  --font-sans: 'Poppins', 'Poppins Fallback';
   --font-mono: 'ui-monospace', 'SFMono-Regular', monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -110,13 +109,12 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
     background-color: #050505;
     color: #ffffff;
-    font-family: var(--font-sans);
   }
-  h1, h2, h3 {
-    font-family: var(--font-serif);
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans;
     letter-spacing: -0.01em;
   }
 }

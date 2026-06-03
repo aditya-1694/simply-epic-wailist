@@ -1,10 +1,12 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, Inter } from 'next/font/google'
+import { Poppins } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const _inter = Inter({ subsets: ["latin"] });
-const _cormorant = Cormorant_Garamond({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], style: ["normal", "italic"] });
+const _poppins = Poppins({ 
+  subsets: ["latin"], 
+  weight: ["300", "400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
   title: 'SimplyEpic - Waitlist',
