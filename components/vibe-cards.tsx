@@ -36,7 +36,7 @@ export function VibeCards() {
   const [isMobile, setIsMobile] = useState(false)
 
   return (
-    <section className="py-12 px-6 md:px-10" style={{ backgroundColor: "#050505" }}>
+    <section className="py-12 px-6 md:px-10" style={{ backgroundColor: "#0F1419" }}>
       <DriftIn>
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-lg md:text-xl font-semibold text-white tracking-tight mb-2">
@@ -76,7 +76,7 @@ export function VibeCards() {
                 {/* Blue tint overlay on hover */}
                 <motion.div
                   className="absolute inset-0"
-                  style={{ backgroundColor: "#3F9FFF", mixBlendMode: "color" }}
+                  style={{ backgroundColor: "#4A9FFF", mixBlendMode: "color" }}
                   animate={{ opacity: isHovered ? 0.35 : 0 }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
                 />
@@ -108,7 +108,7 @@ export function VibeCards() {
                 >
                   <h3
                     className="text-sm sm:text-base font-bold mb-1 sm:mb-2 text-white transition-colors duration-300"
-                    style={{ color: isHovered ? "#3F9FFF" : "#ffffff" }}
+                    style={{ color: isHovered ? "#4A9FFF" : "#ffffff" }}
                   >
                     {vibe.title}
                   </h3>
@@ -121,7 +121,7 @@ export function VibeCards() {
                 <motion.div
                   className="sm:hidden absolute inset-0 pointer-events-none rounded-sm"
                   style={{
-                    border: "2px solid #3F9FFF",
+                    border: "2px solid #4A9FFF",
                     boxShadow: "inset 0 0 20px rgba(63,159,255,0.1)",
                   }}
                   animate={{ opacity: isHovered ? 0.6 : 0 }}

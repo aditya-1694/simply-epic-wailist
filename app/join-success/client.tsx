@@ -53,7 +53,7 @@ function ParticleField() {
       height: `${Math.random() * 4 + 2}px`,
       left: `${Math.random() * 100}%`,
       top: `${Math.random() * 100}%`,
-      backgroundColor: Math.random() > 0.5 ? "#3F9FFF" : "#CBD5E1",
+      backgroundColor: Math.random() > 0.5 ? "#4A9FFF" : "#CBD5E1",
     }))
     setParticles(generated)
   }, [])
@@ -71,7 +71,7 @@ export function SuccessPageClient({ memberName }: { memberName: string | null })
   return (
     <main
       className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden"
-      style={{ backgroundColor: "#050505" }}
+      style={{ backgroundColor: "#0F1419" }}
     >
       <ParticleField />
 
@@ -110,13 +110,13 @@ export function SuccessPageClient({ memberName }: { memberName: string | null })
             className="inline-flex items-center gap-2 text-xs font-medium px-4 py-1.5 rounded-full"
             style={{
               backgroundColor: "rgba(63,159,255,0.1)",
-              color: "#3F9FFF",
+              color: "#4A9FFF",
               border: "1px solid rgba(63,159,255,0.2)",
             }}
           >
             <motion.span
               className="w-1.5 h-1.5 rounded-full"
-              style={{ backgroundColor: "#3F9FFF" }}
+              style={{ backgroundColor: "#4A9FFF" }}
               animate={{ opacity: [1, 0.3, 1] }}
               transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
             />
@@ -133,7 +133,7 @@ export function SuccessPageClient({ memberName }: { memberName: string | null })
         >
           <span className="text-white">Welcome to the Inner Circle,</span>
           {memberName && (
-            <span style={{ color: "#3F9FFF" }}> {memberName}</span>
+            <span style={{ color: "#4A9FFF" }}> {memberName}</span>
           )}
           <span className="text-white">.</span>
         </motion.h1>
@@ -185,7 +185,7 @@ export function SuccessPageClient({ memberName }: { memberName: string | null })
                   animate={{ scale: 1 }}
                   transition={{ duration: 0.4, delay: 0.7 + i * 0.12, ease: "backOut" }}
                 >
-                  <Icon size={18} style={{ color: "#3F9FFF" }} aria-hidden="true" />
+                  <Icon size={18} style={{ color: "#4A9FFF" }} aria-hidden="true" />
                 </motion.div>
 
                 <div className="flex flex-col gap-1.5">

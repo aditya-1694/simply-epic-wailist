@@ -56,7 +56,7 @@ function SlotMachineCounter({ targetValue }: { targetValue: number }) {
   return (
     <motion.div
       className="inline-flex font-mono font-bold text-5xl md:text-6xl tracking-tight overflow-hidden"
-      style={{ color: "#3F9FFF" }}
+      style={{ color: "#4A9FFF" }}
       onViewportEnter={() => {
         if (!hasAnimated) setHasAnimated(true)
       }}
@@ -160,7 +160,7 @@ export function WaitlistSection() {
 
   const inputClass = `
     w-full bg-transparent text-white text-sm py-3 px-0
-    border-b border-slate-700 focus:border-[#3F9FFF] focus:outline-none
+    border-b border-slate-700 focus:border-[#4A9FFF] focus:outline-none
     transition-colors duration-300 placeholder:text-slate-600
   `
 
@@ -168,7 +168,7 @@ export function WaitlistSection() {
     <section
       id="waitlist"
       className="relative py-10 md:py-16 px-6 md:px-10 flex flex-col items-center justify-center overflow-hidden"
-      style={{ backgroundColor: "#050505" }}
+      style={{ backgroundColor: "#0F1419" }}
     >
       {/* Side-by-side on desktop, stacked on mobile */}
       <div className="w-full max-w-6xl flex flex-col lg:flex-row lg:items-stretch gap-10 lg:gap-12">
@@ -183,7 +183,7 @@ export function WaitlistSection() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <p className="text-xs tracking-[0.25em] uppercase mb-3 font-medium" style={{ color: "#3F9FFF" }}>
+            <p className="text-xs tracking-[0.25em] uppercase mb-3 font-medium" style={{ color: "#4A9FFF" }}>
               Founding member benefits
             </p>
             <h2 className="text-2xl md:text-3xl font-semibold text-white leading-tight text-balance">
@@ -208,7 +208,7 @@ export function WaitlistSection() {
                 {/* Highlight value — large and bold */}
                 <span
                   className="text-lg md:text-xl font-bold tracking-tight leading-none"
-                  style={{ color: "#3F9FFF" }}
+                  style={{ color: "#4A9FFF" }}
                 >
                   {perk.highlight}
                 </span>
@@ -252,7 +252,7 @@ export function WaitlistSection() {
                       border: "1px solid rgba(63,159,255,0.18)",
                     }}
                   >
-                    <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 animate-pulse" style={{ backgroundColor: "#3F9FFF" }} />
+                    <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 animate-pulse" style={{ backgroundColor: "#4A9FFF" }} />
                     First 500 members only
                   </span>
                 </div>
@@ -369,7 +369,7 @@ export function WaitlistSection() {
                         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                         className="w-full text-left flex items-center justify-between px-0 py-3 border-b transition-colors duration-300"
                         style={{
-                          borderBottomColor: isDropdownOpen ? "#3F9FFF" : "rgba(71, 85, 105, 0.5)",
+                          borderBottomColor: isDropdownOpen ? "#4A9FFF" : "rgba(71, 85, 105, 0.5)",
                           color: formData.horizon ? "#ffffff" : "#64748B",
                         }}
                       >
@@ -381,7 +381,7 @@ export function WaitlistSection() {
                         <motion.span
                           animate={{ rotate: isDropdownOpen ? 180 : 0 }}
                           transition={{ duration: 0.2 }}
-                          style={{ color: "#3F9FFF" }}
+                          style={{ color: "#4A9FFF" }}
                         >
                           ▾
                         </motion.span>
@@ -397,7 +397,7 @@ export function WaitlistSection() {
                             transition={{ duration: 0.2 }}
                             className="absolute top-full left-0 right-0 mt-2 z-50 border rounded-sm overflow-hidden"
                             style={{
-                              backgroundColor: "#0a0a0a",
+                              backgroundColor: "#1a1f2e",
                               borderColor: "rgba(63,159,255,0.3)",
                               boxShadow: "0 0 24px rgba(63,159,255,0.1)",
                             }}
@@ -419,7 +419,7 @@ export function WaitlistSection() {
                                 <div className="flex items-center justify-between gap-2">
                                   <p
                                     className="text-sm font-medium"
-                                    style={{ color: formData.horizon === opt.value ? "#3F9FFF" : "#ffffff" }}
+                                    style={{ color: formData.horizon === opt.value ? "#4A9FFF" : "#ffffff" }}
                                   >
                                     {opt.label}
                                   </p>
@@ -428,7 +428,7 @@ export function WaitlistSection() {
                                       initial={{ scale: 0 }}
                                       animate={{ scale: 1 }}
                                       className="text-xs font-bold flex-shrink-0"
-                                      style={{ color: "#3F9FFF" }}
+                                      style={{ color: "#4A9FFF" }}
                                     >
                                       ✓
                                     </motion.span>
@@ -457,7 +457,7 @@ export function WaitlistSection() {
                     type="submit"
                     disabled={submitting}
                     className="w-full py-4 text-xs font-bold tracking-widest uppercase text-white rounded-sm transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed mt-4"
-                    style={{ backgroundColor: "#3F9FFF" }}
+                    style={{ backgroundColor: "#4A9FFF" }}
                     onMouseEnter={(e) => {
                       if (!submitting) {
                         e.currentTarget.style.backgroundColor = "#2d8aed"
@@ -465,7 +465,7 @@ export function WaitlistSection() {
                       }
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = "#3F9FFF"
+                      e.currentTarget.style.backgroundColor = "#4A9FFF"
                       e.currentTarget.style.boxShadow = "none"
                     }}
                   >
@@ -491,13 +491,13 @@ export function WaitlistSection() {
                   style={{ backgroundColor: "rgba(63,159,255,0.12)", border: "1px solid rgba(63,159,255,0.3)" }}
                 >
                   <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
-                    <path d="M4 11L9 16L18 6" stroke="#3F9FFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M4 11L9 16L18 6" stroke="#4A9FFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
 
                 <div>
                   <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 text-balance">
-                    Welcome to the SimplyEpic Inner Circle, <span style={{ color: "#3F9FFF" }}>{formData.name.split(" ")[0]}.</span>
+                    Welcome to the SimplyEpic Inner Circle, <span style={{ color: "#4A9FFF" }}>{formData.name.split(" ")[0]}.</span>
                   </h2>
                   <p className="text-sm leading-relaxed" style={{ color: "#94A3B8" }}>
                     Your spot is secure. As a founding member, you'll get 15% off your first activity, priority access to future experiences, and a chance to win free GoPro footage.
@@ -522,7 +522,7 @@ export function WaitlistSection() {
                       backgroundColor: "#000000",
                       borderColor: "rgba(63,159,255,0.3)",
                     }}
-                    onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#3F9FFF" }}
+                    onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#4A9FFF" }}
                     onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(63,159,255,0.3)" }}
                   >
                     <Instagram size={16} aria-hidden="true" />

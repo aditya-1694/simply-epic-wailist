@@ -4,40 +4,39 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #050505;
-  --foreground: #ffffff;
-  --card: #0a0a0a;
-  --card-foreground: #ffffff;
-  --popover: #0a0a0a;
-  --popover-foreground: #ffffff;
-  --primary: #3F9FFF;
+  --background: #0F1419;
+  --foreground: #E0E0E0;
+  --card: #1a1f2e;
+  --card-foreground: #E0E0E0;
+  --popover: #1a1f2e;
+  --popover-foreground: #E0E0E0;
+  --primary: #4A9FFF;
   --primary-foreground: #ffffff;
-  --secondary: #0a0a0a;
-  --secondary-foreground: #ffffff;
-  --muted: #111111;
-  --muted-foreground: #94A3B8;
-  --accent: #3F9FFF;
+  --secondary: #1a1f2e;
+  --secondary-foreground: #E0E0E0;
+  --muted: #2a2f3e;
+  --muted-foreground: #8A92A0;
+  --accent: #4A9FFF;
   --accent-foreground: #ffffff;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: #1e293b;
-  --input: #1e293b;
-  --ring: #3F9FFF;
+  --border: #2a2f3e;
+  --input: #2a2f3e;
+  --ring: #4A9FFF;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
   --radius: 0.625rem;
-  --brand-blue: #3F9FFF;
-  --obsidian: #050505;
-  --surface: #0a0a0a;
-  --body-text: #94A3B8;
+  --brand-blue: #4A9FFF;
+  --obsidian: #0F1419;
+  --surface: #1a1f2e;
+  --body-text: #8A92A0;
 }
 
 @theme inline {
-  --font-sans: 'Inter', 'Inter Fallback';
-  --font-serif: 'Cormorant Garamond', 'Georgia', serif;
+  --font-sans: 'Outfit', 'Outfit Fallback';
   --font-mono: 'ui-monospace', 'SFMono-Regular', monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -110,13 +109,12 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
-    background-color: #050505;
-    color: #ffffff;
-    font-family: var(--font-sans);
+    @apply bg-background text-foreground font-sans;
+    background-color: #0F1419;
+    color: #E0E0E0;
   }
-  h1, h2, h3 {
-    font-family: var(--font-serif);
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans;
     letter-spacing: -0.01em;
   }
 }

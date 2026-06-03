@@ -53,7 +53,7 @@ export function TrustPillars() {
   const [hoveredId, setHoveredId] = useState<string | null>(null)
 
   return (
-    <section className="py-16 md:py-24 px-6 md:px-16" style={{ backgroundColor: "#0a0a0a" }}>
+    <section className="py-16 md:py-24 px-6 md:px-16" style={{ backgroundColor: "#1a1f2e" }}>
       <div className="max-w-6xl mx-auto">
 
         {/* Header Row */}
@@ -62,7 +62,7 @@ export function TrustPillars() {
             <div>
               <p
                 className="text-xs tracking-[0.25em] uppercase mb-4 font-medium"
-                style={{ color: "#3F9FFF" }}
+                style={{ color: "#4A9FFF" }}
               >
                 A new way to book adventure
               </p>
@@ -111,7 +111,7 @@ export function TrustPillars() {
                       {/* Blue tint overlay on hover */}
                       <motion.div
                         className="absolute inset-0"
-                        style={{ backgroundColor: "#3F9FFF", mixBlendMode: "color" }}
+                        style={{ backgroundColor: "#4A9FFF", mixBlendMode: "color" }}
                         animate={{ opacity: isHovered ? 0.35 : 0 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
                       />
@@ -143,7 +143,7 @@ export function TrustPillars() {
                       >
                         <h3
                           className="text-sm sm:text-base font-bold mb-1 sm:mb-2 text-white transition-colors duration-300"
-                          style={{ color: isHovered ? "#3F9FFF" : "#ffffff" }}
+                          style={{ color: isHovered ? "#4A9FFF" : "#ffffff" }}
                         >
                           {vibe.title}
                         </h3>
@@ -156,7 +156,7 @@ export function TrustPillars() {
                       <motion.div
                         className="sm:hidden absolute inset-0 pointer-events-none rounded-sm"
                         style={{
-                          border: "2px solid #3F9FFF",
+                          border: "2px solid #4A9FFF",
                           boxShadow: "inset 0 0 20px rgba(63,159,255,0.1)",
                         }}
                         animate={{ opacity: isHovered ? 0.6 : 0 }}
@@ -179,7 +179,7 @@ export function TrustPillars() {
             <motion.div
               key={pillar.index}
               className="group flex flex-col gap-6 p-7 transition-all duration-500 cursor-default"
-              style={{ backgroundColor: "#0a0a0a" }}
+              style={{ backgroundColor: "#1a1f2e" }}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, ease: "easeOut", delay: i * 0.08 }}
@@ -197,7 +197,7 @@ export function TrustPillars() {
               {/* Accent line */}
               <div
                 className="w-6 h-px transition-all duration-500 group-hover:w-12"
-                style={{ backgroundColor: "#3F9FFF" }}
+                style={{ backgroundColor: "#4A9FFF" }}
               />
 
               {/* Content */}

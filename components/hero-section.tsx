@@ -58,7 +58,7 @@ export function HeroSection() {
               </p>
               <svg
                 className="w-5 h-5 animate-bounce"
-                style={{ color: "#3F9FFF" }}
+                style={{ color: "#4A9FFF" }}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

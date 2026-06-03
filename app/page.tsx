@@ -9,7 +9,7 @@ import { Footer } from "@/components/footer"
 
 export default function Home() {
   return (
-    <main style={{ backgroundColor: "#050505", color: "#ffffff" }}>
+    <main style={{ backgroundColor: "#0F1419", color: "#ffffff" }}>
       <Navbar />
       <HeroSection />
       <ProblemSection />

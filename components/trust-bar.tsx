@@ -20,7 +20,7 @@ const TRUST_SIGNALS = [
 
 export function TrustBar() {
   return (
-    <section className="py-8 md:py-12 px-6 md:px-10" style={{ backgroundColor: "#0a0a0a" }}>
+    <section className="py-8 md:py-12 px-6 md:px-10" style={{ backgroundColor: "#1a1f2e" }}>
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-12">
           {TRUST_SIGNALS.map((signal, i) => {
@@ -37,7 +37,7 @@ export function TrustBar() {
                 <Icon
                   size={20}
                   className="flex-shrink-0"
-                  style={{ color: "#3F9FFF" }}
+                  style={{ color: "#4A9FFF" }}
                   aria-hidden="true"
                 />
                 <span className="text-xs md:text-sm font-medium leading-snug" style={{ color: "#E2E8F0" }}>

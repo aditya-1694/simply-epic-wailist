@@ -24,7 +24,7 @@ export function FAQ() {
   const [openId, setOpenId] = useState<number | null>(null)
 
   return (
-    <section className="py-16 md:py-24 px-6 md:px-10" style={{ backgroundColor: "#050505" }}>
+    <section className="py-16 md:py-24 px-6 md:px-10" style={{ backgroundColor: "#0F1419" }}>
       <div className="max-w-3xl mx-auto">
         {/* Header */}
         <DriftIn>
@@ -62,7 +62,7 @@ export function FAQ() {
                 >
                   <ChevronDown
                     size={20}
-                    style={{ color: openId === i ? "#3F9FFF" : "#64748B" }}
+                    style={{ color: openId === i ? "#4A9FFF" : "#64748B" }}
                   />
                 </motion.div>
               </button>
