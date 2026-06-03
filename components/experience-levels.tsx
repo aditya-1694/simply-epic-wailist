@@ -28,7 +28,7 @@ const MILESTONES = [
 
 export function ExperienceLevels() {
   return (
-    <section className="py-16 md:py-24 px-6 md:px-16" style={{ backgroundColor: "#050505" }}>
+    <section className="py-16 md:py-24 px-6 md:px-16" style={{ backgroundColor: "#0F1419" }}>
       <div className="max-w-6xl mx-auto">
 
         <div className="w-full h-px mb-14" style={{ backgroundColor: "rgba(63,159,255,0.1)" }} />
@@ -40,7 +40,7 @@ export function ExperienceLevels() {
             <span className="text-xs tracking-widest uppercase font-medium" style={{ color: "rgba(63,159,255,0.45)" }}>
               Beginner
             </span>
-            <span className="text-xs tracking-widest uppercase font-medium" style={{ color: "#3F9FFF" }}>
+            <span className="text-xs tracking-widest uppercase font-medium" style={{ color: "#4A9FFF" }}>
               Advanced
             </span>
           </div>
@@ -56,7 +56,7 @@ export function ExperienceLevels() {
             <div className="absolute left-0 right-0 flex items-center" style={{ top: "6px", height: "1px" }}>
               <motion.div
                 className="h-px w-full"
-                style={{ background: "linear-gradient(to right, rgba(63,159,255,0.25), #3F9FFF)" }}
+                style={{ background: "linear-gradient(to right, rgba(63,159,255,0.25), #4A9FFF)" }}
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 transition={{ duration: 1.3, ease: [0.22, 1, 0.36, 1] }}
@@ -81,8 +81,8 @@ export function ExperienceLevels() {
                   <motion.div
                     className="w-3 h-3 rounded-full border-2 z-10"
                     style={{
-                      backgroundColor: "#050505",
-                      borderColor: i === MILESTONES.length - 1 ? "#3F9FFF" : "rgba(63,159,255,0.45)",
+                      backgroundColor: "#0F1419",
+                      borderColor: i === MILESTONES.length - 1 ? "#4A9FFF" : "rgba(63,159,255,0.45)",
                       boxShadow: i === MILESTONES.length - 1 ? "0 0 12px rgba(63,159,255,0.5)" : "none",
                     }}
                     initial={{ scale: 0 }}
@@ -97,7 +97,7 @@ export function ExperienceLevels() {
                     style={{ paddingLeft: i === 0 ? 0 : i === MILESTONES.length - 1 ? undefined : undefined, alignItems: i === MILESTONES.length - 1 ? "flex-end" : "flex-start" }}
                   >
                     <span className="text-sm font-semibold text-white">{m.label}</span>
-                    <span className="text-xs font-mono tracking-wide" style={{ color: "#3F9FFF" }}>
+                    <span className="text-xs font-mono tracking-wide" style={{ color: "#4A9FFF" }}>
                       {m.duration}
                     </span>
                     <span className="text-xs leading-snug" style={{ color: "#CBD5E1", maxWidth: "120px" }}>
@@ -126,7 +126,7 @@ export function ExperienceLevels() {
             />
             <motion.div
               className="absolute left-[5px] top-0 w-px origin-top"
-              style={{ background: "linear-gradient(to bottom, rgba(63,159,255,0.25), #3F9FFF)", bottom: 0 }}
+              style={{ background: "linear-gradient(to bottom, rgba(63,159,255,0.25), #4A9FFF)", bottom: 0 }}
               initial={{ scaleY: 0 }}
               whileInView={{ scaleY: 1 }}
               transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
@@ -147,8 +147,8 @@ export function ExperienceLevels() {
                 <motion.div
                   className="relative z-10 flex-shrink-0 w-[11px] h-[11px] rounded-full border-2 mt-1"
                   style={{
-                    backgroundColor: "#050505",
-                    borderColor: i === MILESTONES.length - 1 ? "#3F9FFF" : "rgba(63,159,255,0.45)",
+                    backgroundColor: "#0F1419",
+                    borderColor: i === MILESTONES.length - 1 ? "#4A9FFF" : "rgba(63,159,255,0.45)",
                     boxShadow: i === MILESTONES.length - 1 ? "0 0 10px rgba(63,159,255,0.5)" : "none",
                   }}
                   initial={{ scale: 0 }}
@@ -160,7 +160,7 @@ export function ExperienceLevels() {
                 {/* Content */}
                 <div className="flex flex-col gap-1">
                   <span className="text-sm font-semibold text-white leading-tight">{m.label}</span>
-                  <span className="text-xs font-mono tracking-wide" style={{ color: "#3F9FFF" }}>{m.duration}</span>
+                  <span className="text-xs font-mono tracking-wide" style={{ color: "#4A9FFF" }}>{m.duration}</span>
                   <span className="text-xs leading-relaxed" style={{ color: "#CBD5E1" }}>{m.description}</span>
                 </div>
               </motion.div>
@@ -168,7 +168,7 @@ export function ExperienceLevels() {
           </div>
 
           {/* Advanced label */}
-          <span className="text-xs tracking-widest uppercase font-medium mt-2 ml-8" style={{ color: "#3F9FFF" }}>
+          <span className="text-xs tracking-widest uppercase font-medium mt-2 ml-8" style={{ color: "#4A9FFF" }}>
             Advanced
           </span>
 

@@ -28,7 +28,7 @@ export function Navbar() {
             whileHover={{ backgroundColor: "rgba(63,159,255,0.08)" }}
             transition={{ duration: 0.3 }}
             className="text-sm font-medium px-4 py-2 rounded-sm border text-white"
-            style={{ borderColor: "#3F9FFF" }}
+            style={{ borderColor: "#4A9FFF" }}
           >
             Secure Early Access
           </motion.button>
